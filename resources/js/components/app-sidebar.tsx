@@ -11,7 +11,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { dashboard } from '@/routes';
+import { dashboard, journals } from '@/routes';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/react';
 import { ArrowBigRight, ArrowRightToLine, ArrowRightToLineIcon, BadgeHelpIcon, BookOpen, ChartNoAxesCombinedIcon, CircleDollarSignIcon, Folder, LayoutGrid, Lightbulb, LightbulbIcon, PanelsLeftBottomIcon, PlaneLandingIcon, PlaneTakeoffIcon, Plus, UserPen, UserPenIcon } from 'lucide-react';
@@ -25,9 +25,9 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },{
-        title: 'My Documents',
-        href: '/documents',
-        icon: Folder,
+        title: 'Journals',
+        href: journals().url,
+        icon: BookOpen,
     },
     {
         title: 'Upload Document',
@@ -97,12 +97,12 @@ export function AppSidebar() {
 
             <SidebarContent>
                 <NavMain items={mainNavItems} />
-                <SidebarGroupLabel className="mt-[1rem] mx-[0.5rem] font-semibold uppercase text-[10px]">Resources</SidebarGroupLabel>
+                <SidebarGroupLabel className="mt-[1rem] tracking-[0.15em] mx-[0.5rem] font-semibold uppercase text-[10px]">Resources</SidebarGroupLabel>
                 <NavMain items={mainNavItems2} />
             </SidebarContent>
 
             <SidebarFooter>
-                <SidebarGroupLabel className="mt-[1rem] mx-[0.5rem] font-semibold uppercase text-[10px]">Connect</SidebarGroupLabel>
+                <SidebarGroupLabel className=" tracking-[0.15em] mx-[0.5rem] font-semibold uppercase text-[10px]">Connect</SidebarGroupLabel>
                 <NavFooter items={footerNavItems} />
                 <InputGroup className="flex items-center border-gray-500/30 bg-sidebar-bg/50 py-2">
                     <InputGroupInput className="font-semibold placeholder:font-semibold placeholder:text-[16px]" placeholder="Search..." />
