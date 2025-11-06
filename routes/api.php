@@ -32,6 +32,15 @@ Route::post('/mobile/register', function (Request $request) {
     ]);
 });
 
+// Route::get('/quotes', function () {
+//     if (!Storage::disk('local')->exists('quotes.json')) {
+//         return response()->json(['quotes' => []]);
+//     }
+
+//     $data = json_decode(Storage::disk('local')->get('quotes.json'), true);
+//     return response()->json($data);
+// });
+
 Route::post('/mobile/login', function (Request $request) {
     $request->validate([
         'email' => 'required|email',

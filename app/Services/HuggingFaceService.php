@@ -3,6 +3,8 @@ namespace App\Services;
 
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class HuggingFaceService
 {
@@ -12,7 +14,7 @@ class HuggingFaceService
 
     public function __construct(){
         $this->apiKey = config('services.huggingface.key');
-        $this->baseUrl = config('services.huggingface.url') ?? 'https://api-inference.huggingface.co/models';
+        $this->baseUrl = config('services.huggingface.url') ?? 'https://router.huggingface.co/hf-inference';
         $this->client = new Client([
             'base_uri' => $this->baseUrl,
             'headers' => [
@@ -22,6 +24,14 @@ class HuggingFaceService
             'timeout' => 60
         ]);
     }
+
+    /**
+     * Call a Hugging Face model
+     *
+     * @param string $model Model name (e.g., "gpt2")
+     * @param array $inputs Input data
+     * @return array
+     */
 
     // Speech to text: upload file and call model (e.g. openai/whisper or facebook/wav2vec)
     public function speechToText(string $s3path){
@@ -58,4 +68,58 @@ class HuggingFaceService
         $json = json_decode($res->getBody()->getContents(), true);
         return ['summary' => is_string($json) ? $json : ($json[0]['summary_text'] ?? null), 'model' => $model];
     }
+
+//    public function generateQuote(): ?string
+// {
+//     $model = "openai-community/gpt2"; // modèle anglais simple et hébergé
+//     $prompt = "Generate a short motivational quote in English.";
+
+//     try {
+//         // Utilisation de $this->client défini dans le constructeur
+//         $res = $this->client->post("/{$model}", [
+//             'json' => [
+//                 'inputs' => $prompt,
+//                 'parameters' => [
+//                     'max_new_tokens' => 50,
+//                     'temperature' => 0.8
+//                 ]
+//             ]
+//         ]);
+
+//         $data = json_decode($res->getBody()->getContents(), true);
+//         Log::info('🔎 Hugging Face router response: ' . json_encode($data));
+
+//         // Retourne la citation générée ou null si absence
+//         return $data[0]['generated_text'] ?? null;
+
+//     } catch (\Exception $e) {
+//         Log::error('💥 Hugging Face Exception: ' . $e->getMessage());
+//         return null;
+//     }
+// }
+
+public function query(string $model, array $inputs): array
+    {
+        $model = 'meta-llama/Llama-3.1-8B-Instruct:novita';
+        $response = Http::withHeaders([
+    'Authorization' => 'Bearer ' . env('HUGGINGFACE_API_KEY'),
+    'Content-Type' => 'application/json',
+])->post("https://router.huggingface.co/v1/chat/completions", [
+    'model' => $model,
+    'messages' => [
+        [
+            'role' => 'user',
+            'content' => 'Generate a short quote in english',
+        ],
+    ],
+]);
+
+
+if ($response->failed()) {
+    throw new \Exception('Hugging Face API request failed: ' . $response->body());
+}
+
+        return $response->json();
+    }
+
 }

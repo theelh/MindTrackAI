@@ -35,7 +35,12 @@ return [
         ],
     ],
     'huggingface' => [
-        'api_key' => env('HUGGINGFACE_API_KEY'),
+        'key' => env('HUGGINGFACE_API_KEY'),
+        'url' => env('HUGGINGFACE_URL', 'https://router.huggingface.co/hf-inference'),
+    ],
+    'stripe' => [
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
     ],
 
 ];

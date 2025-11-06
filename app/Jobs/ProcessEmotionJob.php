@@ -37,6 +37,7 @@ class ProcessEmotionJob implements ShouldQueue
             $raw['transcript'] = $transcript;
             $textToAnalyze = $transcript;
         } else {
+            \Log ::info('Processing text/media for entry ID: '.$entry->id);            
             $textToAnalyze = $entry->text_content ?? '';
         }
 
