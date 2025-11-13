@@ -2,7 +2,6 @@ import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
 import { UserInfo } from '@/components/user-info';
 import { useInitials } from '@/hooks/use-initials';
 import AppLayout from '@/layouts/app-layout';
-import { journals } from '@/routes';
 import { SharedData, type BreadcrumbItem } from '@/types';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import { BrowserRouter, Routes, Route, data } from 'react-router-dom';
