@@ -7,6 +7,7 @@ use App\Http\Controllers\JournalController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\EmotionAnalysisController;
+use App\Http\Controllers\AnalyticsController;
 use Illuminate\Support\Facades\Log;
 use Inertia\Response;
 use App\Models\Quote;
@@ -27,6 +28,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
             'trialEndsAt' => $user->trial_ends_at,
         ]);    
     })->name('dashboard');
+    Route::get('services', function () {        
+        $user = auth()->user();
+        $quotes = Quote::latest()->take(10)->get();
+        return Inertia::render('services', [
+            'quotes' => $quotes,
+            'userPlan' => $user->plan,
+            'trialEndsAt' => $user->trial_ends_at,
+        ]);    
+    })->name('services');
     Route::get('/journals', [JournalController::class, 'index'])->name('journals');
     Route::get('/journal/create', function () {
         return Inertia::render('create');
@@ -38,7 +48,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/subscription/cancel', [SubscriptionController::class, 'cancel'])->name('subscription.cancel');
 
     //Emotion analysis route 
-    Route::post('/emotion/analyze', [EmotionAnalysisController::class, 'analyze'])->name('emotion.analyze');
+    Route::post('/emotion/analyze', [EmotionAnalysisController::class, 'analyzeEmotion'])->name('emotion.analyze');
+    Route::get('/emotion/analytics', [AnalyticsController::class, 'index']);
 
     //journal route
     Route::post('/journals', [JournalController::class, 'store'])->name('journals.store');

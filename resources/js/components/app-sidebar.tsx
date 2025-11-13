@@ -35,8 +35,8 @@ const mainNavItems: NavItem[] = [
         icon: Plus,
     },
     {
-        title: 'Your processes',
-        href: '/processes',
+        title: 'Your Analytics',
+        href: '/emotion/analytics',
         icon: ChartNoAxesCombinedIcon,
     },
     {
@@ -62,7 +62,7 @@ const mainNavItems2: NavItem[] = [
     },
     {
         title: 'Pricing',
-        href: '/pricing',
+        href: '/plans',
         icon: CircleDollarSignIcon,        
     },
 ];

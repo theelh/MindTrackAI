@@ -25,6 +25,14 @@ public function emotionAnalyses()
     return $this->hasMany(EmotionAnalysis::class);
 }
 
+//for analytics fetching relation
+public function emotionAnalysis()
+{
+    return $this->hasOne(EmotionAnalysis::class);
+    // use hasMany() if a journal can have multiple analyses
+}
+
+
 // Optional: latest analysis
 public function latestEmotion()
 {

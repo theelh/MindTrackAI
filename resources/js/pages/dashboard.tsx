@@ -8,8 +8,7 @@ import { Head, Link, router, usePage } from '@inertiajs/react';
 import { BrowserRouter, Routes, Route, data } from 'react-router-dom';
 import { type User } from '@/types';
 import { UserInfoName } from '@/components/UserInfoName';
-import {BadgeHelpIcon, Mail, Plus, ChartNoAxesCombinedIcon, Quote, BadgePlusIcon, Crown, Gift} from "lucide-react";
-import { url } from 'inspector';
+import {BadgeHelpIcon, Mail, Plus, ChartNoAxesCombinedIcon, Quote, BadgePlusIcon, Crown, Gift, ArrowRightIcon} from "lucide-react";
 
 interface Quote {
     id: number;
@@ -98,10 +97,13 @@ export default function Dashboard({ quotes }: Props) {
                             <a  href="/about">About </a>
                             <BadgeHelpIcon className="w-5 h-5 ml-2"/>
                         </button>
-                        <button className="bg-gradient-to-tr text-[15px] rounded-md flex items-center justify-center border font-semibold border-spacing-5 border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200">
-                            <a href="/processes">View Analytics</a>
-                            <ChartNoAxesCombinedIcon className="w-5 h-5 ml-2"/>
-                        </button>
+                        <a
+                            href="/emotion/analytics"
+                            className="bg-gradient-to-tr text-[15px] rounded-md flex items-center justify-center border font-semibold px-5 py-2 from-gray-200 via-white to-gray-200"
+                            >
+                            View Analytics
+                            <ChartNoAxesCombinedIcon className="w-5 h-5 ml-2" />
+                        </a>
                     </div>
                 </div>
                 <div className="p-14 w-80">
@@ -165,13 +167,16 @@ export default function Dashboard({ quotes }: Props) {
                 <div className="px-14 w-full">
                     <h1 className="text-2xl my-4 text-black font-semibold">What Your Mind Needs Today</h1>
                     <p className="max-w-2xl text-[18px] text-[#656565]">
-                        Upload your image and get your emotional analyses
+                        Enjoy personalized suggestions — meditation audios, playlists, or motivational content based on your current state of mind.
                     </p>
+                    <div className="my-3">
+                        <p>#------------------------Adding an image for feed viewing------------------------#</p>
+                    </div>
                     <button
                         className="bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
                     >
-                        <BadgePlusIcon className="w-5 h-5 mr-2" />
-                        <a href="/upload">Upload your image</a>
+                        <ArrowRightIcon className="w-5 h-5 mr-2" />
+                        <a href="/feed">Feed</a>
                     </button>
                 </div>
             </section>

@@ -3,7 +3,8 @@ import { Head, router } from '@inertiajs/react';
 import AppLayout from '@/layouts/app-layout';
 import { BreadcrumbItem } from '@/types';
 import { journals } from '@/routes';
-import axios from 'axios';
+import { toast } from "sonner";
+import axios from "axios";
 
 interface JournalEntry {
   id: number;
@@ -44,18 +45,30 @@ const Index: React.FC<Props> = ({ journals, flash }) => {
   // 🧠 Analyze emotion
   const handleAnalyze = async (entryId: number) => {
   try {
-    const response = await axios.post('/emotion/analyze', {
+    const response = await axios.post("/emotion/analyze", {
       journal_entry_id: entryId,
     });
 
     if (response.data.success) {
-      alert(`Emotion: ${response.data.data.emotion_label} (Confidence: ${response.data.data.confidence})`);
+      const { emotion_label, confidence } = response.data.data;
+
+      toast.success(`Émotion détectée : ${emotion_label}`, {
+        description: `Confiance : ${(confidence * 100).toFixed(1)}%`,
+      });
     }
   } catch (error) {
     console.error(error);
-    alert('❌ Failed to analyze emotion.');
+    toast.error("❌ Échec de l'analyse des émotions.");
   }
 };
+
+const getMediaUrl = (path?: string): string => {
+  if (!path) return '';
+  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  return `${window.location.origin}/storage/uploads/${path}`;
+};
+
+
 
 
   return (
@@ -82,22 +95,34 @@ const Index: React.FC<Props> = ({ journals, flash }) => {
               <div className="flex-1">
                 <p className="mb-2 text-gray-700">{entry.text_content}</p>
 
-                {entry.media_path && (
-                  <p>
-                    Media:{' '}
-                    <a
-                      href={entry.media_path}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 underline"
-                    >
-                      View
-                    </a>
-                  </p>
-                )}
+                {entry.media_path && entry.media_type === 'image' && (
+            <img
+              src={getMediaUrl(entry.media_path)}
+              alt="Journal media"
+              className="mt-2 max-w-xs rounded-xl"
+            />
+          )}
 
-                <p className="text-sm text-gray-500 mb-2">
-                  {entry.created_at}
+          {entry.media_path && entry.media_type === 'audio' && (
+            <audio controls className="mt-2">
+              <source src={getMediaUrl(entry.media_path)} />
+              Your browser does not support the audio element.
+            </audio>
+            
+          )}
+          {entry.media_path && entry.media_type === 'text' && (
+            <iframe
+              src={getMediaUrl(entry.media_path) || ''}
+              className="mt-2 w-full h-96 border rounded"
+              title="PDF Document"
+            >
+              Your browser does not support iframes.
+            </iframe>
+          )}
+
+
+                <p className="text-xl my-5 font-semibold text-gray-500 mb-2">
+                  MindTrackAI
                 </p>
 
                 <button

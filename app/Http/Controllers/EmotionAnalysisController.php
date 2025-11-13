@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Log;
 use App\Services\HuggingFaceService;
 use App\Models\JournalEntry;
 use App\Models\EmotionAnalysis;
-use Inertia\Inertia;
 
 class EmotionAnalysisController extends Controller
 {
@@ -18,8 +17,7 @@ class EmotionAnalysisController extends Controller
         $this->huggingFace = $huggingFace;
     }
 
-    // Analyze emotion of a single journal entry
-    public function analyze(Request $request)
+    public function analyzeEmotion(Request $request)
     {
         $request->validate([
             'journal_entry_id' => 'required|integer|exists:journal_entries,id',
@@ -28,15 +26,30 @@ class EmotionAnalysisController extends Controller
         $journal = JournalEntry::findOrFail($request->journal_entry_id);
 
         try {
-            // Call HuggingFaceService
-            $result = $this->huggingFace->analyzeTextEmotion($journal->text_content);
+            $result = null;
+
+            switch ($journal->media_type) {
+                case 'text':
+                    $result = $this->huggingFace->analyzeTextEmotion($journal->text_content);
+                    break;
+
+                case 'audio':
+                    $result = $this->huggingFace->analyzeAudioEmotion($journal->media_path);
+                    break;
+
+                case 'image':
+                    $result = $this->huggingFace->analyzeImageEmotion($journal->media_path);
+                    break;
+
+                default:
+                    throw new \Exception('Unsupported media type: ' . $journal->media_type);
+            }
 
             if (!$result || empty($result['label'])) {
-                Log::error('❌ Hugging Face returned empty for journal ID ' . $journal->id);
+                Log::error('❌ Empty emotion result for journal ID ' . $journal->id);
                 return response()->json(['error' => 'Failed to analyze emotion.'], 500);
             }
 
-            // Save result in DB
             $emotion = EmotionAnalysis::create([
                 'journal_entry_id' => $journal->id,
                 'emotion_label' => $result['label'],
@@ -54,7 +67,7 @@ class EmotionAnalysisController extends Controller
             ]);
 
         } catch (\Exception $e) {
-            Log::error('❌ Emotion analysis failed: ' . $e->getMessage());
+            Log::error('💥 Emotion analysis failed: ' . $e->getMessage());
             return response()->json(['error' => 'Failed to analyze emotion.'], 500);
         }
     }
