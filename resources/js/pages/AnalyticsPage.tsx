@@ -16,6 +16,18 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
+// Imports Recharts
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+} from "recharts";
+
 interface EmotionAnalysis {
   date: string;
   entries: number;
@@ -32,6 +44,35 @@ const AnalyticsPage: React.FC<Props> = ({ data }) => {
   const totalEntries = data.reduce((sum, item) => sum + item.entries, 0);
   const maxEntries = Math.max(...data.map((d) => d.entries), 1);
   const avgEntries = (totalEntries / data.length).toFixed(1);
+
+  // Map emotions to numeric values for chart  
+  const maxConfidence = Math.max(...data.map(d => d.confidence ?? 0), 1);
+  const maxEmotion = 3; // because emotionValue ranges from -3 to 3
+
+  // Convert emotion map
+  const emotionMap: Record<string, number> = {
+    joy: 3,
+    happy: 3,
+    positive: 2,
+    neutral: 1,
+    sad: -1,
+    fear: -2,
+    anger: -3,
+  };
+
+  // Prepare normalized chart data
+  const chartData = data.map(d => {
+    const emotionValue = d.emotion_label
+      ? emotionMap[d.emotion_label.toLowerCase()] ?? 0
+      : 0;
+
+    return {
+      date: d.date,
+      entriesNorm: (d.entries / maxEntries) * 100,
+      confidenceNorm: ((d.confidence ?? 0) / maxConfidence) * 100,
+      emotionNorm: ((emotionValue + maxEmotion) / (2 * maxEmotion)) * 100, // shift -3..3 to 0..6, then scale to 0..100
+    };
+  });
 
   return (
     <AppLayout>
@@ -56,7 +97,7 @@ const AnalyticsPage: React.FC<Props> = ({ data }) => {
               <CardTitle>Average per Day</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-3xl font-bold text-green-600">{avgEntries}</p>
+              <p className="text-3xl font-bold text-green-600">{isNaN(Number(avgEntries)) ? 0 : Number(avgEntries)}</p>
             </CardContent>
           </Card>
 
@@ -70,7 +111,7 @@ const AnalyticsPage: React.FC<Props> = ({ data }) => {
           </Card>
         </div>
 
-        {/* Progress Bars */}
+        {/* Entries Over Time (progress bars) */}
         <Card>
           <CardHeader>
             <CardTitle>Entries Over Time</CardTitle>
@@ -91,6 +132,58 @@ const AnalyticsPage: React.FC<Props> = ({ data }) => {
           </CardContent>
         </Card>
 
+        {/* Combined Analytics Chart */}
+        <Card>
+          <CardHeader>
+            <CardTitle>Mood & Activity Trends</CardTitle>
+          </CardHeader>
+
+          <CardContent>
+            <div style={{ width: "100%", height: 380 }}>
+              <ResponsiveContainer>
+                <LineChart data={chartData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="date" />
+                  <YAxis domain={[0, 100]} tickFormatter={(v) => `${v.toFixed(0)}%`} />
+                  <Tooltip formatter={(value: number) => `${value.toFixed(1)}%`} />
+                  <Legend />
+
+                  <Line
+                    type="monotone"
+                    dataKey="entriesNorm"
+                    name="Entries"
+                    stroke="#4f46e5"
+                    strokeWidth={3}
+                    dot={true}
+                  />
+
+                  <Line
+                    type="monotone"
+                    dataKey="confidenceNorm"
+                    name="Confidence"
+                    stroke="#10b981"
+                    strokeWidth={2}
+                    dot={true}
+                  />
+
+                  <Line
+                    type="monotone"
+                    dataKey="emotionNorm"
+                    name="Emotion Trend"
+                    stroke="#f43f5e"
+                    strokeWidth={2}
+                    dot={true}
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+
+            <p className="text-sm text-gray-500 mt-2">
+              All metrics are normalized to 0–100% to visualize trends together.
+            </p>
+          </CardContent>
+        </Card>
+
         {/* Detailed Emotion Table */}
         <Card>
           <CardHeader>
@@ -103,7 +196,7 @@ const AnalyticsPage: React.FC<Props> = ({ data }) => {
                   <TableHead>Date</TableHead>
                   <TableHead>Entries</TableHead>
                   <TableHead>Emotion Label</TableHead>
-                  <TableHead>Confidence</TableHead>                  
+                  <TableHead>Confidence</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>

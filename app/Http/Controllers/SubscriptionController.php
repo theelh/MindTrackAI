@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Exceptions\IncompletePayment;
+use App\Models\Payment;
 
 class SubscriptionController extends Controller
 {
@@ -39,12 +40,34 @@ class SubscriptionController extends Controller
         }
     }
 
-    public function success()
-    {
-        $user = Auth::user();
-        $user->update(['plan' => 'pro']);
-        return inertia('Billing/Success');
+
+public function success()
+{
+    $user = Auth::user();
+    $user->update(['plan' => 'pro']);
+
+    $subscription = $user->subscription('default');
+
+    if ($subscription) {
+        $stripeSub = $subscription->asStripeSubscription();
+        $amount = $stripeSub->items->data[0]->price->unit_amount / 100;
+        $planName = $stripeSub->items->data[0]->price->nickname ?? 'Pro Plan';
+        $stripeId = $stripeSub->id;
+
+        Payment::create([
+            'user_id' => $user->id,
+            'plan_name' => $planName,
+            'amount' => $amount,
+            'payment_status' => 'paid',
+            'stripe_id' => $stripeId,
+        ]);
     }
+
+    return Inertia::render('Billing/Success', [
+        'subscription' => $subscription,
+    ]);
+}
+
 
     public function cancel()
     {

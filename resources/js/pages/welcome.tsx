@@ -1,6 +1,8 @@
 import React from "react";
 import { Head, Link, usePage } from "@inertiajs/react";
 import { type SharedData } from "@/types";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // ✅ Manual route helpers (no Ziggy needed)
 const routes = {

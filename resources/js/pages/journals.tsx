@@ -44,6 +44,7 @@ const Index: React.FC<Props> = ({ journals, flash }) => {
 
   // 🧠 Analyze emotion
   const handleAnalyze = async (entryId: number) => {
+    setLoadingId(entryId);
   try {
     const response = await axios.post("/emotion/analyze", {
       journal_entry_id: entryId,
@@ -59,6 +60,8 @@ const Index: React.FC<Props> = ({ journals, flash }) => {
   } catch (error) {
     console.error(error);
     toast.error("❌ Échec de l'analyse des émotions.");
+  }finally{
+    setLoadingId(null);
   }
 };
 

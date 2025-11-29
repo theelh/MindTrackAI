@@ -11,6 +11,11 @@ use App\Http\Controllers\AnalyticsController;
 use Illuminate\Support\Facades\Log;
 use Inertia\Response;
 use App\Models\Quote;
+use App\Models\User;
+use App\Models\JournalEntry;
+use App\Models\EmotionAnalysis;
+use App\Models\Payment;
+use \App\Http\Controllers\ChatController;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
@@ -41,11 +46,61 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/journal/create', function () {
         return Inertia::render('create');
     });
+    //chatmodel
+    Route::post('/chatbot/send', [ChatController::class, 'sendMessage'])->name('chatbot.send');
+    Route::get('/chatbot/history', [ChatController::class, 'history'])->name('chatbot.history');
+
     //Paymen route
     Route::get('/plans', [SubscriptionController::class, 'index'])->name('subscription.plans');
     Route::post('/checkout', [SubscriptionController::class, 'checkout'])->name('subscription.checkout');
     Route::get('/subscription/success', [SubscriptionController::class, 'success'])->name('subscription.success');
     Route::get('/subscription/cancel', [SubscriptionController::class, 'cancel'])->name('subscription.cancel');
+
+    Route::get('/about', function () {
+        $userCount = User::count();
+        $quoteCount = Quote::count();
+
+        // happy users (e.g., journal with emotion = 'happy')
+        $positiveEmotions = [
+            'happy',
+            'joy',
+            'happiness',
+            'joyful',
+            'delighted',
+            'cheerful',
+            'content',
+            'contentment',
+            'positive',
+            'optimistic',
+            'excited',
+            'enthusiasm',
+            'pleased',
+            'satisfaction',
+            'grateful',
+            'gratitude',
+            'peaceful',
+            'calm',
+            'relaxed',
+            'hopeful',
+            'motivated',
+            'confident',
+            'love',
+            'affection',
+            'proud'
+        ];
+
+    $happyUsers = EmotionAnalysis::whereIn('emotion_label', $positiveEmotions)->count();
+
+        // fixed value or from DB
+        $capital = Payment::where('payment_status', 'paid')->sum('amount');
+
+        return Inertia::render('about', [
+            'userCount'   => $userCount,
+            'quoteCount'  => $quoteCount,
+            'happyUsers'  => $happyUsers,
+            'capital'     => $capital,
+        ]);
+    })->name('about');
 
     //Emotion analysis route 
     Route::post('/emotion/analyze', [EmotionAnalysisController::class, 'analyzeEmotion'])->name('emotion.analyze');

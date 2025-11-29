@@ -271,4 +271,69 @@ if ($response->failed()) {
         return $response->json();
     }
 
+    public function chatbotText(string $message)
+{
+    try {
+        if (empty(trim($message))) {
+            Log::warning('⚠️ Empty chat message.');
+            return ['reply' => null, 'model' => 'chat-llama-3', 'raw' => []];
+        }
+
+        $model = "meta-llama/Llama-3.1-8B-Instruct";
+        $url   = "https://router.huggingface.co/v1/chat/completions";
+
+        Log::info("🤖 Sending chatbot request", [
+            'payload' => [
+                'model' => $model,
+                'messages' => [
+                    ['role' => 'user', 'content' => $message]
+                ]
+            ]
+        ]);
+
+        // ------------- 🔥 IMPORTANT -------------
+        // Hugging Face Router uses Bearer token, not username:password
+        // -----------------------------------------
+        $res = $this->client->post($url, [
+            'headers' => [
+                "Authorization" => "Bearer " . $this->apiKey,
+                "Content-Type"  => "application/json",
+                "Accept"        => "application/json",
+            ],
+            'json' => [
+                "model" => $model,
+                "messages" => [
+                    ['role' => 'user', 'content' => $message]
+                ]
+            ]
+        ]);
+
+        $body = (string) $res->getBody();
+        $json = json_decode($body, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            Log::error("🧩 JSON decode failed: " . json_last_error_msg());
+            return ['reply' => null, 'model' => $model, 'raw' => []];
+        }
+
+        // HF Chat response format
+        $reply = $json['choices'][0]['message']['content'] ?? null;
+
+        return [
+            "reply" => $reply,
+            "model" => $model,
+            "raw"   => $json,
+        ];
+
+    } catch (\Exception $e) {
+        Log::error("🔥 Chatbot request failed: " . $e->getMessage());
+
+        return [
+            "reply" => "I cannot reach the assistant right now.",
+            "model" => "chat-llama-3",
+            "raw"   => []
+        ];
+    }
+}
+
 }

@@ -8,6 +8,12 @@ import { BrowserRouter, Routes, Route, data } from 'react-router-dom';
 import { type User } from '@/types';
 import { UserInfoName } from '@/components/UserInfoName';
 import {BadgeHelpIcon, Mail, Plus, ChartNoAxesCombinedIcon, Quote, BadgePlusIcon, Crown, Gift, ArrowRightIcon} from "lucide-react";
+import HeroAnimation from '@/components/HeroAnimation';
+import gsap from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from 'react';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+
 
 interface Quote {
     id: number;
@@ -33,10 +39,31 @@ interface Quote {
     text: string;
 }
 
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
 export default function Services({ quotes }: Props) {  
-    const handleGenerate = () => {
-        router.post("/quotes/generate");
-    };
+   useEffect(() => {
+    const cards = [".card-1", ".card-2", ".card-3", ".card-4"];
+
+    cards.forEach((card) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+            markers: false
+          },
+        }
+      );
+    });
+  }, []);
 
     const { props } = usePage<{ 
         auth: { user: User }, 
@@ -50,179 +77,234 @@ export default function Services({ quotes }: Props) {
     const hasActivePlan = userPlan && userPlan !== "free";
     return (
         <>
-            {/* <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
-                <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />                    
-                    </div>
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                    </div>
-                    <div className="relative aspect-video overflow-hidden rounded-xl border border-sidebar-border/70 dark:border-sidebar-border">
-                        <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                    </div>
-                </div>
-                <div className="relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border">
-                <PlaceholderPattern className="absolute inset-0 size-full stroke-neutral-900/20 dark:stroke-neutral-100/20" />
-                </div>
-            </div> */}
-        <Head title="Home" />
-
-            {/* ✅ Background container with controlled layering */}
-            <div className="absolute inset-0 overflow-hidden z-0">
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full fixed h-full object-cover"
-            >
-                <source src="/videos/87787-602074236.mp4" type="video/mp4" />
-            </video>
+        <Head title="Services" />
+            {/* ✅ Fixed hero background (not affected by ScrollSmoother) */}
+            <div className="h-full bg-white left-64 fixed inset-0 overflow-hidden z-0">
+                <HeroAnimation
+                imageBaseUrl="/img/frame"
+                totalFrames={100}
+                scale={0.5}
+                />
             </div>
 
-            {/* ✅ Actual page content above it */}
             <AppLayout breadcrumbs={breadcrumbs}>
             <main className="relative z-10 flex flex-col w-full mb-6">
-                <div className="flex pt-8 justify-between">
-                    <h1 className="text-[48px] px-10 pt-8 my-4 font-semibold text-black leading-[3rem]"> Services</h1>
+                {/* <div className="flex pt-8 justify-between">
+                    <h1 className="text-[48px] px-10 pt-4 my-4 font-semibold text-black leading-[2rem]"> </h1>
                     <div className="p-14">
                     {hasActivePlan ? (
-                        <button className="bg-indigo-500 w-full text-[15px] text-white rounded-md flex items-center justify-center border font-semibold border-white px-3 py-2">
+                        <button className="bg-gradient-to-tr shadow-xl shadow-white text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200">
                             <a href="/journal/create">Add Journal</a>
                             <Plus className="w-5 h-5 ml-2" />
                         </button>
                     ) : (
-                        <div className="flex flex-col gap-3">
-                            <button className="bg-yellow-500 text-white text-[15px] rounded-md flex items-center justify-center border font-semibold border-white px-3 py-2">
+                        <div className="flex flex-col gap-1">
+                            <button className="bg-yellow-400 px-2 text-white shadow-lg shadow-yellow-300 text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-yellow-400 border-spacing-5 py-2">
                                 <a href="/plans">Get your plan</a>
                                 <Crown className="w-5 h-5 ml-2" />
                             </button>
-                            <button className="bg-gray-200 text-[15px] rounded-md flex items-center justify-center border font-semibold border-gray-300 px-3 py-2">
+                            <button className="bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center px-3 justify-center border font-semibold border-gray-300  py-2 from-gray-200 via-white to-gray-200">
                                 <a href="/trial">Continue Free Trial</a>
                                 <Gift className="w-5 h-5 ml-2" />
                             </button>
                         </div>
                     )}
                 </div>
-                </div>
-            <section className="flex px-10 gap-6 flex-col md:flex-row items-start justify-between p-6">
-                <div
-                    style={{
-                        backgroundImage: "url('/img/modern-3d-black-paper-style-background.jpg')",
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
-                    }}
-                    className="w-full flex gap-10 p-10 border border-gray-700 rounded-2xl overflow-x-scroll snap-x snap-mandatory scroll-smooth"
-                    >
-                    {[
-                        {
-                        title: "Mood Detection",
-                        subtitle: "AI Emotion Recognition",
-                        desc: "Understand your emotional tone from text, voice, and facial cues.",
-                        img: "./img/face-recognition-modif.png",
-                        },
-                        {
-                        title: "Trend Analytics",
-                        subtitle: "Visualize Emotional Growth",
-                        desc: "See progress over days, weeks, and months through interactive charts.",
-                        img: "./img/robot-showing-low-results-statistics.jpg",
-                        },
-                        {
-                        title: "Personalized Guidance",
-                        subtitle: "Tailored Recommendations",
-                        desc: "Receive music, meditation, and self-care content matching your mood.",
-                        img: "./img/call-center-worker-using-ai-tech-laptop-reply-customers-closeup.jpg",
-                        },
-                        {
-                        title: "Secure Storage",
-                        subtitle: "Your Data, Your Control",
-                        desc: "All information is encrypted and stored with complete transparency.",
-                        img: "./img/secured-file-folder-futuristic-data-network.jpg",
-                        },
-                    ].map((card, index) => (
-                        <div
-                        key={index}
-                        className="min-w-full md:min-w-[50%] snap-center flex flex-col items-center justify-center bg-white/5 backdrop-blur-md border border-gray-700 rounded-3xl p-7 shadow-xl hover:scale-[1.03] transition-all duration-500"
-                        >
-                        <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 text-[36px] md:text-[48px] font-bold text-center mb-4">
-                            {card.title}
-                        </h1>
+                </div> */}
+            <section className="flex flex-col items-center justify-center px-6 md:px-10 py-10 gap-20">
+                {/* Card 1 – Right */}
+                <div className="w-full flex justify-end">
+                    <div className="max-w-2xl w-full md:w-[70%] flex flex-col items-start rounded-3xl p-7 hover:scale-[1.03] transition-all duration-500 bg-white/50 shadow-lg">
 
-                        {/* ✅ Uniform Image Section */}
-                        <div className="w-[85%] md:w-[70%] h-[300px] md:h-[150px] flex items-center justify-center overflow-hidden rounded-2xl shadow-lg">
-                            <img
-                            src={card.img}
-                            alt={card.title}
-                            className="w-full h-full object-cover"
-                            />
-                        </div>
+                    <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-black to-cyan-300 text-[36px] md:text-[45px] font-bold mb-4">
+                        Mood Detection
+                    </h1>
 
-                        <h2 className="text-xl md:text-2xl text-gray-300 font-semibold mt-6">
-                            {card.subtitle}
-                        </h2>
-                        <p className="max-w-3xl text-[16px] md:text-[18px] text-gray-400 text-center mt-3">
-                            {card.desc}
-                        </p>
-                        </div>
-                    ))}
+                    <div className="w-full overflow-hidden rounded-2xl">
+                        <img
+                        src="./img/face-recognition-modif.png"
+                        alt="Mood Detection"
+                        className="w-full h-full object-cover"
+                        />
                     </div>
-            </section>
-            <section className="flex gap-6 flex-col md:flex-row items-start justify-between p-6">
-                <div className="px-14 w-full">
-                    <h1 className="text-2xl my-4 text-black font-semibold">Today’s Quote</h1>
 
-                    <div className="space-y-6">
-                        <div
-                            style={{
-                            backgroundImage: "url('/img/modern-3d-black-paper-style-background.jpg')",
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat',
-                            }}
-                            className="w-full  p-8 border border-gray-300 rounded-2xl overflow-x-auto"
-                            >
-                            <ul className="flex flex-nowrap gap-8 min-w-max px-2">
-                            {quotes.map((q) => (
-                                <li
-                                key={q.id}
-                                 className="bg-gray-100 shadow-lg shadow-white/30 italic flex-col items-center justify-center px-6 text-3xl py-4 rounded-xl text-gray-700 font-medium hover:bg-gray-200 transition max-w-md break-words"
-                                >                            
-                                {q.text}
-                                <p className="font-semibold text-xl my-5">Author: MindTrack AI</p>
+                    <h2 className="text-xl md:text-2xl text-blackfont-semibold mt-6">
+                        AI Emotion Recognition
+                    </h2>
+                    <p className="text-[16px] md:text-[18px] text-gray-600 mt-3 max-w-lg">
+                        Understand your emotional tone from text, voice, and facial cues.
+                    </p>
+
+                    </div>
+                </div>
+
+                {/* Card 2 – Left */}
+                <div className="w-full flex justify-start">
+                    <div className="max-w-2xl w-full md:w-[70%] flex flex-col items-start rounded-3xl p-7 hover:scale-[1.03] transition-all duration-500 bg-white/50 shadow-lg">
+
+                    <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-black to-cyan-300 text-[36px] md:text-[45px] font-bold mb-4">
+                        Trend Analytics
+                    </h1>
+
+                    <div className="w-full overflow-hidden rounded-2xl">
+                        <img
+                        src="./img/robot-showing-low-results-statistics.jpg"
+                        alt="Trend Analytics"
+                        className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <h2 className="text-xl md:text-2xl text-black font-semibold mt-6">
+                        Visualize Emotional Growth
+                    </h2>
+                    <p className="text-[16px] md:text-[18px] text-gray-600 mt-3 max-w-lg">
+                        Track your progress over days, weeks and months through clean analytics.
+                    </p>
+
+                    </div>
+                </div>
+
+                {/* Card 3 – Right */}
+                <div className="w-full flex justify-end">
+                    <div className="max-w-2xl w-full md:w-[70%] flex flex-col items-start rounded-3xl p-7 hover:scale-[1.03] transition-all duration-500 bg-white/50 shadow-lg">
+
+                    <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-black to-cyan-300 text-[36px] md:text-[45px] font-bold mb-4">
+                        Personalized Guidance
+                    </h1>
+
+                    <div className="w-full overflow-hidden rounded-2xl">
+                        <img
+                        src="./img/call-center-worker-using-ai-tech-laptop-reply-customers-closeup.jpg"
+                        alt="Personalized Guidance"
+                        className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <h2 className="text-xl md:text-2xl text-black font-semibold mt-6">
+                        Tailored Recommendations
+                    </h2>
+                    <p className="text-[16px] md:text-[18px] text-gray-600 mt-3 max-w-lg">
+                        Receive music, meditation and self-care content matching your mood.
+                    </p>
+
+                    </div>
+                </div>
+
+                {/* Card 4 – Left */}
+                <div className="w-full flex justify-start">
+                    <div className="max-w-2xl w-full md:w-[70%] flex flex-col items-start rounded-3xl p-7 hover:scale-[1.03] transition-all duration-500 bg-white/50 shadow-lg">
+
+                    <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-black to-cyan-300 text-[36px] md:text-[45px] font-bold mb-4">
+                        Secure Storage
+                    </h1>
+
+                    <div className="w-full overflow-hidden rounded-2xl">
+                        <img
+                        src="./img/secured-file-folder-futuristic-data-network.jpg"
+                        alt="Secure Storage"
+                        className="w-full h-full object-cover"
+                        />
+                    </div>
+
+                    <h2 className="text-xl md:text-2xl text-black font-semibold mt-6">
+                        Your Data, Your Control
+                    </h2>
+                    <p className="text-[16px] md:text-[18px] text-gray-600 mt-3 max-w-lg">
+                        All information is encrypted and stored with complete transparency.
+                    </p>
+
+                    </div>
+                </div>
+
+                </section>
+                <section className="bg-white border-t py-5 px-10 border-black/25 flex gap-10">
+                    <div className=" pb-7 rounded-[1.5rem] shadow-lg w-[70%] bg-[#f2f2f2] hover:scale-[1.03] transition-all duration-500">
+                        <div className="mb-3">
+                            <img className="rounded-t-[1.5rem]" src="/img/pay-sect-image.jpg" alt="pay-sect-image" />
+                        </div>
+                        <div className="flex px-7 justify-between">
+                            <h1 className="text-2xl text-black font-semibold">Choose Your Wellness Plan</h1>
+                            {hasActivePlan ? (
+                                <p className="border px-2 py-1 rounded-xl bg-yellow-500 text-white font-semibold">
+                                    Already in Plan
+                                </p>
+                            ) : (
+                                <p className="border px-2 py-1 rounded-xl bg-yellow-500 text-white font-semibold">
+                                    Pro Plan
+                                </p>
+                            )}
+                        </div>
+                        
+                        <div className="flex border-b px-7 border-black/25 gap-[6rem] mt-4 w-full">
+                            <ul className="list-disc my-5 pl-5">
+                                <li className="max-w-2xl text-[16px] text-[#656565]">
+                                    All features
                                 </li>
-                            ))}
+                                <li className="max-w-2xl text-[16px] text-[#656565]">
+                                    Mood predictions
+                                </li>
+                            </ul>
+                            <ul className="list-disc my-5 pl-5">
+                                <li className="max-w-2xl text-[16px] text-[#656565]">
+                                    Personalized content
+                                </li>
+                                <li className="max-w-2xl text-[16px] text-[#656565]">
+                                    Priority support
+                                </li>
                             </ul>
                         </div>
-
-                    <button
-                        onClick={handleGenerate}
-                        className="bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
-                    >
-                        <BadgePlusIcon className="w-5 h-5 mr-2" />
-                        Generate a new Quote
-                    </button>
+                        <div className="px-7">
+                            {hasActivePlan ? (
+                                <button className="hover:scale-[1.09] hover:shadow-xl hover:shadow-indigo-600/40 hover:text-indigo-600 transition-all duration-500 bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200">
+                                    <a href="/journal/create">Add Journal</a>
+                                    <Plus className="w-5 h-5 ml-2" />
+                                </button>
+                            ) : (
+                                <button className="hover:scale-[1.09] hover:shadow-xl hover:shadow-yellow-600/40 hover:text-yellow-600 transition-all duration-500 bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200">
+                                    <a href="/plans">Get your plan</a>
+                                    <Crown className="w-5 h-5 ml-2" />
+                                </button>
+                            )}
+                        </div>
                     </div>
-                </div>
+                    {/* section2 */}
+                    <div className="pb-7 rounded-[1.5rem] shadow-lg w-[70%] bg-[#f2f2f2] hover:scale-[1.03] transition-all duration-500">
+                        <div className="mb-3">
+                            <img className="rounded-t-[1.5rem]" src="/img/img2.jpg" alt="img2" />
+                        </div>
+                        <div className="flex px-7 justify-between">
+                            <h1 className="text-2xl text-black font-semibold">Your Daily Wellness Stream</h1>
+                            <p className="border px-2 py-1 rounded-xl bg-indigo-600 text-white font-semibold">
+                                Feed
+                            </p>
+                        </div>
+                        
+                        <div className="flex border-b px-7 border-black/25 gap-[6rem] mt-4 w-full">
+                            <ul className="list-disc my-5 pl-5">
+                                <li className="max-w-2xl text-[16px] text-[#656565]">
+                                    Motivational quotes
+                                </li>
+                                <li className="max-w-2xl text-[16px] text-[#656565]">
+                                    Guided meditation videos
+                                </li>
+                            </ul>
+                            <ul className="list-disc my-5 pl-5">
+                                <li className="max-w-2xl text-[16px] text-[#656565]">
+                                    Calming music
+                                </li>
+                                <li className="max-w-2xl text-[16px] text-[#656565]">
+                                    Breathing exercises
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="px-7">
+                            <button className="hover:scale-[1.09] hover:shadow-xl hover:shadow-indigo-600/40 hover:text-indigo-600 transition-all duration-500 bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200">
+                                <a href="/feed">Feed</a>
+                                <ArrowRightIcon className="w-5 h-5 ml-2" />
+                            </button>
+                        </div>
+                    </div>
                 </section>
-            <section className="flex gap-6 flex-col md:flex-row items-start justify-between p-6">
-                <div className="px-14 w-full">
-                    <h1 className="text-2xl my-4 text-black font-semibold">What Your Mind Needs Today</h1>
-                    <p className="max-w-2xl text-[18px] text-[#656565]">
-                        Enjoy personalized suggestions — meditation audios, playlists, or motivational content based on your current state of mind.
-                    </p>
-                    <div className="my-3">
-                        <p>#------------------------Adding an image for feed viewing------------------------#</p>
-                    </div>
-                    <button
-                        className="bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
-                    >
-                        <ArrowRightIcon className="w-5 h-5 mr-2" />
-                        <a href="/feed">Feed</a>
-                    </button>
-                </div>
-            </section>
         </main>
         </AppLayout>
         </>
