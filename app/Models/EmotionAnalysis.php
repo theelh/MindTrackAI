@@ -10,6 +10,6 @@ class EmotionAnalysis extends Model {
     protected $casts = ['raw_result' => 'array'];
 
     public function journalEntry(){
-        return $this->belongsTo(JournalEntry::class);
+        return $this->belongsTo(JournalEntry::class, 'journal_entry_id', 'id');
     }
 }

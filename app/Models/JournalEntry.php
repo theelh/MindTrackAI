@@ -15,6 +15,28 @@ class JournalEntry extends Model {
     }
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
+    
+    // app/Models/JournalEntry.php
+
+public function emotionAnalyses()
+{
+    return $this->hasMany(EmotionAnalysis::class);
+}
+
+//for analytics fetching relation
+public function emotionAnalysis()
+{
+    return $this->hasOne(EmotionAnalysis::class);
+    // use hasMany() if a journal can have multiple analyses
+}
+
+
+// Optional: latest analysis
+public function latestEmotion()
+{
+    return $this->hasOne(EmotionAnalysis::class)->latestOfMany();
+}
+
 }

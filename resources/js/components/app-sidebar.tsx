@@ -21,22 +21,22 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/in
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
+        title: 'Home',
         href: dashboard(),
         icon: LayoutGrid,
     },{
-        title: 'Journals',
-        href: journals().url,
+        title: 'Journals entries',
+        href: journals(),
         icon: BookOpen,
     },
     {
         title: 'Upload Document',
-        href: '/upload',
-        icon: Plus,        
+        href: '/journal/create',
+        icon: Plus,
     },
     {
-        title: 'Your processes',
-        href: '/processes',
+        title: 'Your Analytics',
+        href: '/emotion/analytics',
         icon: ChartNoAxesCombinedIcon,
     },
     {
@@ -55,14 +55,10 @@ const mainNavItems2: NavItem[] = [
         title: 'Feed',
         href: '/feed',
         icon: PanelsLeftBottomIcon,
-    },{
-        title: 'Toughts',
-        href: '/toughts',
-        icon: LightbulbIcon,
     },
     {
         title: 'Pricing',
-        href: '/pricing',
+        href: '/plans',
         icon: CircleDollarSignIcon,        
     },
 ];
@@ -73,22 +69,17 @@ const footerNavItems: NavItem[] = [
         href: '/contact',
         icon: UserPenIcon,
     },
-    {
-        title: 'Documentation',
-        href: 'https://laravel.com/docs/starter-kits#react',
-        icon: BookOpen,
-    },
 ];
 
 export function AppSidebar() {
     return (
-        <Sidebar collapsible="icon" variant="inset">
+        <Sidebar className="shadow-xl " collapsible="icon" variant="inset">
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
                             <Link href={dashboard()} prefetch>
-                                <NavUser />
+                                <AppLogo/>
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
@@ -104,8 +95,9 @@ export function AppSidebar() {
             <SidebarFooter>
                 <SidebarGroupLabel className=" tracking-[0.15em] mx-[0.5rem] font-semibold uppercase text-[10px]">Connect</SidebarGroupLabel>
                 <NavFooter items={footerNavItems} />
+                <NavUser />
                 <InputGroup className="flex items-center border-gray-500/30 bg-sidebar-bg/50 py-2">
-                    <InputGroupInput className="font-semibold placeholder:font-semibold placeholder:text-[16px]" placeholder="Search..." />
+                    <InputGroupInput className="font-normal placeholder:font-semibold placeholder:text-[16px]" placeholder="Search..." />
                     <InputGroupAddon>
                         <SearchIcon />
                     </InputGroupAddon>
