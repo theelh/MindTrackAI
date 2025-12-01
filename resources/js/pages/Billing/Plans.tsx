@@ -19,10 +19,10 @@ export default function Plans({ plans }: { plans: any[] }) {
     };
 
     const { props } = usePage<{ 
-            auth: { user: User }, 
-            userPlan?: string, 
-            trialEndsAt?: string 
-        }>();
+        auth: { user: User }, 
+        userPlan?: string, 
+        trialEndsAt?: string 
+    }>();
     
         const userPlan = props.userPlan;
         const trialEndsAt = props.trialEndsAt;
@@ -145,15 +145,50 @@ export default function Plans({ plans }: { plans: any[] }) {
                 <form method="POST" action="/checkout">
                   <input type="hidden" name="plan" value={p.id} />
                   <input type="hidden" name="_token" value={(document.querySelector('meta[name="csrf-token"]') as HTMLMetaElement).content} />
-                  <button
-                    type="submit"
-                    className={`mt-5 px-5 py-2 rounded-lg text-black ${
-                      p.price === 0 ? "hover:scale-[1.09] hover:shadow-xl hover:shadow-indigo-600/40 hover:text-indigo-600 transition-all duration-500 bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200" : "hover:scale-[1.09] hover:shadow-xl hover:shadow-yellow-600/40 hover:text-yellow-600 transition-all duration-500 bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
-                    }`}
-                  >
-                    {p.price === 0 ? <GiftIcon className="w-5 h-5 mr-2" /> : <Crown className="w-5 h-5 mr-2" />}
-                    {p.price === 0 ? "Continue Free Trial" : "Get Pro Plan"}
-                  </button>
+                  {hasActivePlan ? (
+                    // If user already has plan → Show "Add Journal"
+                    <a
+                        href="/journal/create"
+                        className="
+                            group mt-5 flex items-center justify-center 
+                            px-5 py-2 rounded-md border font-semibold 
+                            bg-gradient-to-tr from-gray-200 via-white to-gray-200 
+                            text-black shadow-lg 
+                            transition-all duration-300
+
+                            hover:scale-[1.05] 
+                            hover:bg-gradient-to-tl hover:from-black hover:via-indigo-900 hover:to-indigo-600 
+                            hover:text-white hover:border-indigo-400 hover:shadow-indigo-500/40
+                        "
+                    >
+                        Add Journal
+                        <Plus className="w-5 h-5 ml-2 group-hover:text-white" />
+                    </a>
+                ) : (
+                    // If plan NOT active → Show subscription button
+                    <button
+                        type="submit"
+                        className="
+                            mt-5 flex items-center justify-center 
+                            px-5 py-2 rounded-md border font-semibold 
+                            bg-gradient-to-tr from-gray-200 via-white to-gray-200 
+                            text-black shadow-md 
+                            transition-all duration-300
+
+                            hover:scale-[1.05] 
+                            hover:shadow-xl 
+                            hover:text-indigo-600
+                        "
+                    >
+                        {p.price === 0 ? (
+                            <GiftIcon className="w-5 h-5 mr-2" />
+                        ) : (
+                            <Crown className="w-5 h-5 mr-2 text-yellow-500" />
+                        )}
+
+                        {p.price === 0 ? "Continue Free Trial" : "Get Pro Plan"}
+                    </button>
+                )}
                 </form>
               </div>
     ))}

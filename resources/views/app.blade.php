@@ -31,7 +31,7 @@
             }
         </style>
 
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        <title inertia>{{ config('app.name', 'MindTrackAI') }}</title>
 
         {{-- <link rel="icon" href="/favicon.ico" sizes="any"> --}}
         <link rel="icon" href="/img/mindtrack-favicon.png" type="image/svg+xml">

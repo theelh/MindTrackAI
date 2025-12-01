@@ -16,12 +16,14 @@ use App\Models\JournalEntry;
 use App\Models\EmotionAnalysis;
 use App\Models\Payment;
 use \App\Http\Controllers\ChatController;
+use \App\Http\Controllers\FeedController;
 
 Route::get('/', function () {
     return Inertia::render('welcome', [
         'canRegister' => Features::enabled(Features::registration()),
     ]);
 })->name('home');
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {        
@@ -45,7 +47,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/journals', [JournalController::class, 'index'])->name('journals');
     Route::get('/journal/create', function () {
         return Inertia::render('create');
-    });
+    })->name('journalCreate');
     //chatmodel
     Route::post('/chatbot/send', [ChatController::class, 'sendMessage'])->name('chatbot.send');
     Route::get('/chatbot/history', [ChatController::class, 'history'])->name('chatbot.history');
@@ -106,6 +108,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/emotion/analyze', [EmotionAnalysisController::class, 'analyzeEmotion'])->name('emotion.analyze');
     Route::get('/emotion/analytics', [AnalyticsController::class, 'index']);
 
+    //Feed page
+    Route::get('/feed', [FeedController::class, 'index'])->name('feed');
     //journal route
     Route::post('/journals', [JournalController::class, 'store'])->name('journals.store');
     Route::get('/journals/{id}', [JournalController::class, 'show'])->name('journals.show');

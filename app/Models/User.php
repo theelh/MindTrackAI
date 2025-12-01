@@ -11,6 +11,8 @@ use Laravel\Passport\HasApiTokens;
 use Laravel\Passport\Contracts\OAuthenticatable;
 use Laravel\Cashier\Billable;
 use App\Models\JournalEntry;
+use App\Models\Payment;
+use App\Models\EmotionAnalysis;
 
 class User extends Authenticatable implements MustVerifyEmail, OAuthenticatable
 {
@@ -64,6 +66,29 @@ public function chatMessages()
 {
     return $this->hasMany(ChatMessage::class);
 }
+
+public function hasActivePlan()
+{
+    return $this->plan === 'pro';
+}
+
+public function payments()
+{
+    return $this->hasMany(Payment::class);
+}
+
+public function emotionAnalyses()
+{
+    return $this->hasManyThrough(
+        EmotionAnalysis::class,
+        JournalEntry::class,
+        'user_id',
+        'journal_entry_id',
+        'id',
+        'id' 
+    );
+}
+
 
 
 }

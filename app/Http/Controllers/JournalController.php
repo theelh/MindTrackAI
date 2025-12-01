@@ -34,8 +34,10 @@ class JournalController extends Controller
     if (!$user->subscribed('default')) {
         $entriesCount = $user->journalEntries()->count(); // relation: hasMany(JournalEntry::class)
 
-        if ($entriesCount >= 3) {
-            return redirect()->route('subscription.plans')->with('error', '🚫 You have reached the limit of the free plan (3 newspapers). Upgrade to the Pro plan to continue.');
+        if ($entriesCount >= 3 && $user->plan == 'free') {
+            return back()->withErrors([
+                'limit' => 'You reached your journal limit. Upgrade to pro plan to create unlimited journals.'
+            ]);
         }
     }
 

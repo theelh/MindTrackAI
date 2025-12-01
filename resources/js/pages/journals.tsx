@@ -59,7 +59,7 @@ const Index: React.FC<Props> = ({ journals, flash }) => {
     }
   } catch (error) {
     console.error(error);
-    toast.error("❌ Échec de l'analyse des émotions.");
+    toast.error("❌ Failure to analyze emotions.");
   }finally{
     setLoadingId(null);
   }

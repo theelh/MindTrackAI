@@ -55,10 +55,6 @@ const mainNavItems2: NavItem[] = [
         title: 'Feed',
         href: '/feed',
         icon: PanelsLeftBottomIcon,
-    },{
-        title: 'Toughts',
-        href: '/toughts',
-        icon: LightbulbIcon,
     },
     {
         title: 'Pricing',
