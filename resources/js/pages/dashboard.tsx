@@ -1,15 +1,10 @@
-import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
-import { UserInfo } from '@/components/user-info';
-import { useInitials } from '@/hooks/use-initials';
 import AppLayout from '@/layouts/app-layout';
-import { dashboard, journals } from '@/routes';
-import { SharedData, type BreadcrumbItem } from '@/types';
-import { Head, Link, router, usePage } from '@inertiajs/react';
-import { BrowserRouter, Routes, Route, data } from 'react-router-dom';
+import { dashboard } from '@/routes';
+import {  type BreadcrumbItem } from '@/types';
+import { Head, router, usePage } from '@inertiajs/react';
 import { type User } from '@/types';
 import { UserInfoName } from '@/components/UserInfoName';
-import {BadgeHelpIcon, Mail, Plus, ChartNoAxesCombinedIcon, Quote, BadgePlusIcon, Crown, Gift, ArrowRightIcon} from "lucide-react";
-import HeroAnimation from '@/components/HeroAnimation';
+import {BadgeHelpIcon, Plus, ChartNoAxesCombinedIcon, Quote, BadgePlusIcon, Crown, Gift, ArrowRightIcon} from "lucide-react";
 import HeroAnimationUniq from '@/components/HeroAnimationUniq';
 import LineChart from '@/components/LineChart';
 
@@ -49,7 +44,6 @@ export default function Dashboard({ quotes }: Props) {
     }>();
 
     const userPlan = props.userPlan;
-    const trialEndsAt = props.trialEndsAt;
 
     const hasActivePlan = userPlan && userPlan !== "free";
     return (
@@ -100,16 +94,16 @@ export default function Dashboard({ quotes }: Props) {
                     <p className="max-w-2xl text-[18px] text-[#656565]">
                         Start your day with awareness. See your current emotional balance, your latest activity, and personalized AI insights — all in one glance.
                     </p>
-                    <div className="mt-8 flex gap-4">
-                        <button className="bg-gradient-to-tr text-[15px] rounded-md flex items-center justify-center border font-semibold border-spacing-5 border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200">
+                    <div className="mt-3 flex gap-4">
+                        <button className="hover:scale-[1.09] hover:border-indigo-400 hover:shadow-xl hover:bg-gradient-to-tl hover:from-black hover:via-indigo-950 hover:to-indigo-600 hover:shadow-black/40 hover:text-white transition-all duration-500 bg-gradient-to-tr shadow-lg shadow-white text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200">
                             <a  href="/about">About </a>
                             <BadgeHelpIcon className="w-5 h-5 ml-2"/>
                         </button>
                         <a
                             href="/emotion/analytics"
-                            className="bg-gradient-to-tr text-[15px] rounded-md flex items-center justify-center border font-semibold px-5 py-2 from-gray-200 via-white to-gray-200"
+                            className="hover:scale-[1.09] hover:border-indigo-400 hover:shadow-xl hover:bg-gradient-to-tl hover:from-black hover:via-indigo-950 hover:to-indigo-600 hover:shadow-black/40 hover:text-white transition-all duration-500 bg-gradient-to-tr shadow-lg shadow-white text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
                             >
-                            View Analytics
+                            View Analytics 
                             <ChartNoAxesCombinedIcon className="w-5 h-5 ml-2" />
                         </a>
                     </div>
@@ -157,7 +151,7 @@ export default function Dashboard({ quotes }: Props) {
 
                     <button
                         onClick={handleGenerate}
-                        className="bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
+                        className="hover:scale-[1.09] hover:border-indigo-400 hover:shadow-xl hover:bg-gradient-to-tl hover:from-black hover:via-indigo-950 hover:to-indigo-600 hover:shadow-black/40 hover:text-white transition-all duration-500 bg-gradient-to-tr shadow-lg shadow-white text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
                     >
                         <BadgePlusIcon className="w-5 h-5 mr-2" />
                         Generate a new Quote
@@ -181,7 +175,7 @@ export default function Dashboard({ quotes }: Props) {
                             />
                         </div>
                         <button
-                            className="bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
+                            className="hover:scale-[1.09] hover:border-indigo-400 hover:shadow-xl hover:bg-gradient-to-tl hover:from-black hover:via-indigo-950 hover:to-indigo-600 hover:shadow-black/40 hover:text-white transition-all duration-500 bg-gradient-to-tr shadow-lg shadow-white text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
                         >
                             <a href="/emotion/analytics">View Analytics</a>
                             <ChartNoAxesCombinedIcon className="w-5 h-5 ml-2" />
@@ -189,17 +183,17 @@ export default function Dashboard({ quotes }: Props) {
                     </div>
                 </section>
                 {/* Feed section */}
-                <section className="flex gap-6 flex-col md:flex-row items-start justify-between p-6">
+                <section className="flex gap-6 max-w-3xl flex-col md:flex-row items-start justify-between p-6">
                     <div className="px-14 w-full">
                         <h1 className="text-2xl my-4 text-black font-semibold">What Your Mind Needs Today</h1>
                         <p className="max-w-2xl text-[18px] text-[#656565]">
                             Enjoy personalized suggestions — meditation audios, playlists, or motivational content based on your current state of mind.
                         </p>
                         <div className="my-3">
-                            <p>#------------------------Adding an image for feed viewing------------------------#</p>
+                            <img className="backdrop-blur-sm rounded-xl border border-black/20 shadow-lg" src="/img/feedPage-capture.png" alt="feedPage-capture" />
                         </div>
                         <button
-                            className="bg-gradient-to-tr text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
+                            className="hover:scale-[1.09] hover:border-indigo-400 hover:shadow-xl hover:bg-gradient-to-tl hover:from-black hover:via-indigo-950 hover:to-indigo-600 hover:shadow-black/40 hover:text-white transition-all duration-500 bg-gradient-to-tr shadow-lg shadow-white text-[15px] cursor-pointer mt-5 rounded-md flex items-center justify-center border font-semibold border-gray-300 px-5 py-2 from-gray-200 via-white to-gray-200"
                         >
                             <ArrowRightIcon className="w-5 h-5 mr-2" />
                             <a href="/feed">Feed</a>
@@ -214,9 +208,15 @@ export default function Dashboard({ quotes }: Props) {
                         </div>
                         <div className="flex px-7 justify-between">
                             <h1 className="text-2xl text-black font-semibold">Choose Your Wellness Plan</h1>
-                            <p className="border px-2 py-1 rounded-xl bg-yellow-500 text-white font-semibold">
-                                Pro Plan
-                            </p>
+                            {hasActivePlan ? (
+                                            <p className="border px-2 py-1 rounded-xl bg-yellow-500 text-white font-semibold">
+                                                Already in Plan
+                                            </p>
+                                        ) : (
+                                            <p className="border px-2 py-1 rounded-xl bg-yellow-500 text-white font-semibold">
+                                                Pro Plan
+                                            </p>
+                                        )}
                         </div>
                         
                         <div className="flex border-b px-7 border-black/25 gap-[6rem] mt-4 w-full">

@@ -27,6 +27,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import { BreadcrumbItem } from "@/types";
 
 interface EmotionAnalysis {
   date: string;
@@ -39,6 +40,13 @@ interface EmotionAnalysis {
 interface Props {
   data: EmotionAnalysis[];
 }
+
+const breadcrumbs: BreadcrumbItem[] = [
+    {
+        title: 'Analytics',
+        href: '/emotion/analytics',        
+    },
+];
 
 const AnalyticsPage: React.FC<Props> = ({ data }) => {
   const totalEntries = data.reduce((sum, item) => sum + item.entries, 0);
@@ -75,7 +83,7 @@ const AnalyticsPage: React.FC<Props> = ({ data }) => {
   });
 
   return (
-    <AppLayout>
+    <AppLayout breadcrumbs={breadcrumbs}>
       <Head title="Analytics" />
 
       <div className="p-6 space-y-6">
