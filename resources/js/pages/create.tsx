@@ -58,7 +58,7 @@ const CreateJournal: React.FC = () => {
   return (
     <AppLayout breadcrumbs={breadcrumbs}>
     <div className="p-6">
-      <Head title="Add Journal Entry" />
+      <Head title="Add Entries" />
       <h1 className="text-2xl font-bold mb-4">Add New Journal Entry</h1>
       <ul className="mb-4 p-6 hover:text-black text-[#6b6a6a] bg-white border border-black/25  rounded-xl flex flex-col lg:mb-6 hover:scale-[1.03] hover:shadow-lg transition-all duration-300">
         <li className="relative flex items-center gap-4 py-2 before:absolute before:top-1/2 before:bottom-0 before:left-[0.4rem] before:border-l before:border-[#dbdbd7] dark:before:border-[#3E3E3A]">

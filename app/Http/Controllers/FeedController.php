@@ -43,7 +43,7 @@ class FeedController extends Controller
     } elseif (in_array($latestMoodLabel, $stressedWords)) {
         $latestMood = 'stressed';
     } else {
-        $latestMood = 'default';
+        $latestMood = 'Neutral';
     }
 
 
@@ -108,7 +108,7 @@ if ($latestMood === 'happy') {
     ];
 }
 
-if ($latestMood === 'default') {
+if ($latestMood === 'Neutral') {
     $suggestions[] = [
         "type" => "youtube",
         "title" => "Relaxing Nature",
@@ -124,7 +124,7 @@ if ($latestMood === 'default') {
 
     return inertia("Feed/Index", [
         "suggestions" => $suggestions,
-        'latestMood' => $latestMood ?? 'default',
+        'latestMood' => $latestMood ?? 'Neutral',
     ]);
 }
 

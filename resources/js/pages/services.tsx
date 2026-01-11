@@ -1,13 +1,8 @@
-import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
-import { UserInfo } from '@/components/user-info';
-import { useInitials } from '@/hooks/use-initials';
 import AppLayout from '@/layouts/app-layout';
-import { SharedData, type BreadcrumbItem } from '@/types';
-import { Head, Link, router, usePage } from '@inertiajs/react';
-import { BrowserRouter, Routes, Route, data } from 'react-router-dom';
+import {  type BreadcrumbItem } from '@/types';
+import { Head, usePage } from '@inertiajs/react';
 import { type User } from '@/types';
-import { UserInfoName } from '@/components/UserInfoName';
-import {BadgeHelpIcon, Mail, Plus, ChartNoAxesCombinedIcon, Quote, BadgePlusIcon, Crown, Gift, ArrowRightIcon} from "lucide-react";
+import { Plus, Quote, Crown, ArrowRightIcon} from "lucide-react";
 import HeroAnimation from '@/components/HeroAnimation';
 import gsap from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -128,7 +123,7 @@ export default function Services({ quotes }: Props) {
                         />
                     </div>
 
-                    <h2 className="text-xl md:text-2xl text-blackfont-semibold mt-6">
+                    <h2 className="text-xl md:text-2xl text-black font-semibold mt-6">
                         AI Emotion Recognition
                     </h2>
                     <p className="text-[16px] md:text-[18px] text-gray-600 mt-3 max-w-lg">
@@ -270,7 +265,7 @@ export default function Services({ quotes }: Props) {
                     {/* section2 */}
                     <div className="pb-7 rounded-[1.5rem] shadow-lg w-[70%] bg-[#f2f2f2] hover:scale-[1.03] transition-all duration-500">
                         <div className="mb-3">
-                            <img className="rounded-t-[1.5rem]" src="/img/img2.jpg" alt="img2" />
+                            <img className="rounded-t-[1.5rem]" src="/img/feedPage-capture.png" alt="feedPage-capture" />
                         </div>
                         <div className="flex px-7 justify-between">
                             <h1 className="text-2xl text-black font-semibold">Your Daily Wellness Stream</h1>
@@ -291,9 +286,6 @@ export default function Services({ quotes }: Props) {
                             <ul className="list-disc my-5 pl-5">
                                 <li className="max-w-2xl text-[16px] text-[#656565]">
                                     Calming music
-                                </li>
-                                <li className="max-w-2xl text-[16px] text-[#656565]">
-                                    Breathing exercises
                                 </li>
                             </ul>
                         </div>

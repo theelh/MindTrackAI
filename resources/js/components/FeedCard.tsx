@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Youtube, Music2, MusicIcon } from "lucide-react";
+import { Youtube, Music2 } from "lucide-react";
 
 export interface Suggestion {
     type: "youtube" | "spotify";

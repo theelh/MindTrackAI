@@ -25,14 +25,13 @@ export default function Plans({ plans }: { plans: any[] }) {
     }>();
     
         const userPlan = props.userPlan;
-        const trialEndsAt = props.trialEndsAt;
     
         const hasActivePlan = userPlan && userPlan !== "free";
 
   return (
 
     <>
-      <Head title="About" />
+      <Head title="Plan" />
       <div className="h-full bg-gradient-to-t from-[#BABABA] to-white fixed left-64 flex inset-0 items-end justify-end overflow-hidden z-0">
         <HeroAnimationthree
         imageBaseUrl="/img/fram3"
@@ -105,8 +104,16 @@ export default function Plans({ plans }: { plans: any[] }) {
                     }`}>
                   {p.price === 0 ? <p className="border mb-7 max-w-16 mx-auto px-2 py-1 text-xs rounded-xl bg-indigo-500 text-white font-semibold">
                                     Free
-                                </p> : <p className="border mb-7 max-w-20 mx-auto text-xs px-2 py-1 rounded-xl bg-yellow-500 text-white font-semibold">
-                                    Pro Plan
+                                    </p> : <p className="border mb-7 max-w-20 mx-auto text-xs px-2 py-1 rounded-xl bg-yellow-500 text-white font-semibold">
+                                        {hasActivePlan ? (
+                                            <p>
+                                                Already in Plan
+                                            </p>
+                                        ) : (
+                                            <p>
+                                                Pro Plan
+                                            </p>
+                                        )}
                                 </p>}
                 <h2 className="text-2xl font-semibold mb-3">{p.name}</h2>
                 <p className="text-gray-600">{p.price === 0 ? "Free" : `${p.price} €/month`}</p>
