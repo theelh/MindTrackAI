@@ -1,0 +1,361 @@
+{
+  "Welcome": "مرحبا",
+  "Login": "تسجيل الدخول",
+  "Register": "تسجيل",
+  "Logout": "تسجيل الخروج",
+  "desc" : "رحلتك العاطفية في لمحة.",
+  "desc2" : "ابدأ يومك بضمير كامل. استشر كيفية تحقيق التوازن العاطفي الحالي ونشاطك الأخير والتحليلات المخصصة بفضل IA.",
+  "about" : "بخصوص شركتنا",
+  "analytics" : "عرض النتائج",
+  "addJournal" : "إضافة مذكرات",
+  "TodayQuote" : "اقتباس اليوم",
+  "GetYourPlan" : "اشترك الان",
+  "ContinueFreeTrial" : "تجربة المجانية",
+  "GenerateANewQuote" : "اقتباس جديد",
+  "Home" : "الرئيسية",
+  "MoodEvolutionOverTime" : "التحليلات المزاج مع مرور الوقت",
+  "Author" : "مؤلف",
+  "desc3" : "تتبع أنماطك العاطفية من خلال الرؤى اليومية والأسبوعية والشهرية.",
+  "feed_title": "ما يحتاجه عقلك اليوم",
+  "feed_description": "استمتع باقتراحات مخصصة — مقاطع تأمل، قوائم تشغيل، أو محتوى تحفيزي حسب حالتك الذهنية.",
+  "feed_button": "الخلاصة",
+  "plan_title": "اختر خطة العافية الخاصة بك",
+  "in_plan": "أنت مشترك بالفعل",
+  "pro_plan": "اشترك الان",
+  "feature_all": "جميع الميزات",
+  "feature_mood": "توقعات المزاج",
+  "feature_personalized": "محتوى مخصص",
+  "feature_priority_support": "دعم أولوية",
+
+
+  "My Journals": "مذكرات",
+  "My Journal Entries": "مدخلات يومياتي",
+  "No journal entries yet": "لا توجد أي مدخلات حتى الآن",
+  "Journal media": "وسائط اليومية",
+  "Your browser does not support the audio element": "متصفحك لا يدعم عنصر الصوت.",
+  "PDF Document": "ملف PDF",
+  "Your browser does not support iframes.": "متصفحك لا يدعم الإطارات.",
+  "Analyzing...": "جاري التحليل...",
+  "Analyze Emotion": "تحليل المشاعر",
+  "Emotion": "المشاعر",
+  "Confidence": "نسبة الثقة",
+  "Delete": "حذف",
+  "Delete Confirmation": "تأكيد الحذف",
+  "Are you sure you want to delete this journal entry? This action cannot be undone.": "هل أنت متأكد أنك تريد حذف هذا الإدخال؟ لا يمكن التراجع عن هذا الإجراء.",
+  "Cancel": "إلغاء",
+
+
+  "Create Journals" : "إنشاء المجلات",
+  "Add Entries": "إضافة مدخلات",
+  "Add New Journal Entry": "إضافة إدخال جديد في اليوميات",
+  "1. Create your journal (Text, Image, Audio)": "1. أنشئ يومياتك (نص، صورة، صوت)",
+  "2. Go to journals entries to analyze your emotion": "2. انتقل إلى إدخالات اليوميات لتحليل مشاعرك",
+  "3. Check your analytics section to see your progresses": "3. اطلع على قسم التحليلات لرؤية تقدمك",
+  "Text Content": "محتوى النص",
+  "Media Type": "نوع الوسائط",
+  "Text": "نص",
+  "Image": "صورة",
+  "Audio": "صوت",
+  "Upload Media": " (mp3) تحميل ملف",
+  "Choose a file" : "اختيار ملف",
+  "Saving...": "جاري الحفظ...",
+  "Save Entry": "حفظ الإدخال",
+  "Back to Journals": "العودة إلى اليوميات",
+  "Émotion détectée" : "تم كشف احساسك",
+
+  
+  "Analytics" : "تحليل البيانات",
+  "analytics.title": "تقدمك ومشاعرك",
+  "analytics.totalEntries": "إجمالي الإدخالات",
+  "analytics.averagePerDay": "المتوسط اليومي",
+  "analytics.maxEntries": "أعلى عدد إدخالات في يوم واحد",
+  "analytics.entriesOverTime": "تغير الإدخالات مع الوقت",
+  "analytics.moodTrends": "اتجاهات المزاج والنشاط",
+  "analytics.normalizedNote": "جميع القيم تم تطبيعها بين 0 و 100٪ لعرض الاتجاهات معًا.",
+  "analytics.table.title": "تحليل المشاعر اليومي",
+  "analytics.table.date": "التاريخ",
+  "analytics.table.entries": "عدد الإدخالات",
+  "analytics.table.emotion": "نوع المشاعر",
+  "analytics.table.confidence": "درجة الثقة",
+
+
+  "Services" : "الخدمات",
+  "home.moodDetection.title": "اكتشاف الحالة المزاجية",
+  "home.moodDetection.subtitle": "التعرف على المشاعر بالذكاء الاصطناعي",
+  "home.moodDetection.desc": "افهم حالتك العاطفية من النص والصوت وتعابير الوجه.",
+  "home.trendAnalytics.title": "تحليل الاتجاهات",
+  "home.trendAnalytics.subtitle": "تتبع نموك العاطفي",
+  "home.trendAnalytics.desc": "تابع تقدمك خلال الأيام والأسابيع والأشهر عبر تحليلات واضحة.",
+  "home.guidance.title": "إرشاد مخصص",
+  "home.guidance.subtitle": "توصيات مصممة لك",
+  "home.guidance.desc": "استلم موسيقى وتأملات ومحتوى للرعاية الذاتية يناسب حالتك المزاجية.",
+  "home.storage.title": "تخزين آمن",
+  "home.storage.subtitle": "بياناتك تحت سيطرتك",
+  "home.storage.desc": "جميع المعلومات مشفرة ومخزنة بشفافية كاملة.",
+  "home.plan.choose": "اختر خطة الرفاه الخاصة بك",
+  "home.plan.badge.active": "مشترك حاليًا",
+  "home.plan.badge.pro": "اشترك الان",
+  "home.plan.features.all": "جميع الميزات",
+  "home.plan.features.mood": "توقعات الحالة المزاجية",
+  "home.plan.features.personalized": "محتوى مخصص",
+  "home.plan.features.support": "دعم أولوية",
+  "home.plan.button.addJournal": "إضافة يومية",
+  "home.plan.button.getPlan": "احصل على الخطة",
+  "home.feed.title": "بث الرفاه اليومي الخاص بك",
+  "home.feed.badge": "الخلاصة",
+  "home.feed.features.quotes": "اقتباسات تحفيزية",
+  "home.feed.features.meditation": "فيديوهات تأمل موجهة",
+  "home.feed.features.music": "موسيقى مهدئة",
+  "home.feed.button": "الدخول",
+
+
+  "aboute": {
+    "AboutUs" : "بخصوص شركتنا",
+    "title": "الرفاهية العاطفية للجميع",
+    "subtitle": "نمزج بين علم النفس والتصميم والذكاء الاصطناعي لمساعدة الناس على فهم أنفسهم.",
+    "learn_more": "تعرف أكثر على مهمتنا",
+    "meet_team": "التعرف على الفريق",
+    "platform_metrics": "إحصائيات المنصة",
+    "distribution": "التوزيع",
+    "total_users": "إجمالي المستخدمين",
+    "total_quotes": "إجمالي الاقتباسات",
+    "happy_users": "المستخدمون السعداء",
+    "platform_capital": "رأس مال المنصة",
+    "mission_title": "المهمة:",
+    "mission_text": "نهدف إلى توفير أدوات رقمية سهلة وعالية الجودة يمكن للجميع الوصول إليها — من المبتدئين إلى المحترفين.",
+    "started_title": "كيف بدأت القصة",
+    "started_text": "بدأت رحلتنا بفكرة بسيطة: إنشاء أداة حديثة تحل مشاكل حقيقية دون تعقيد. ما بدأ كمشروع صغير أصبح منصة يستخدمها أشخاص حول العالم. جمعنا بين التصميم والتقنية وآراء المستخدمين لبناء شيء ذو قيمة — وما زلنا في البداية فقط.",
+    "innovation_title": "الابتكار:",
+    "innovation_desc": "نستكشف باستمرار أفكارًا جديدة لتحسين حلولنا.",
+    "quality_title": "الجودة:",
+    "quality_desc": "نركز على الاستقرار والأداء والتميز.",
+    "transparency_title": "الشفافية:",
+    "transparency_desc": "تسعير واضح، تواصل صريح، وقرارات تضع المستخدم أولاً.",
+    "community_title": "المجتمع:",
+    "community_desc": "نكبر من خلال الاستماع إلى مستخدمينا.",
+    "team_title": "التعرف على الفريق",
+    "team1_title": "مروان — المؤسس والمطور",
+    "team1_desc": "شغوف ببناء تجارب رقمية موثوقة. يقود التطوير والمعمارية واتجاه المنتج.",
+    "team2_title": "مروان — مصمم UI/UX",
+    "team2_desc": "يصمم واجهات حديثة تركز على الإنسان بأنظمة تصميم قابلة للتطوير وسهلة الاستخدام.",
+    "Users" : "المستخدمين",
+    "Quotes" : "اقتباسات",
+    "HappyUsers" : "المستخدمون السعداء",
+    "Capital" : "رأس مال ($)"
+  },
+
+  "Menu" : {
+    "nav": {
+      "home": "الصفحة الرئيسية",
+      "journals": "مدخلات اليوميات",
+      "upload": "إضافة يومية",
+      "analytics": "تحليلاتك",
+      "services": "الخدمات",
+      "about": "معلومات عنا"
+    },
+    "footer": {
+      "resources": "الموارد",
+      "feed": "اقتراحات",
+      "pricing": "اشتراك",
+      "connect": "تواصل",
+      "contact": "اتصل",
+      "Search" : "بحث..."
+    }
+  },
+  "feed": {
+    "FeedSuggestions" : "اقتراحات",
+    "title": "🎧 اقتراحات حسب حالتك المزاجية",
+    "yourMood": "مزاجك الحالي:",
+    "mood": {
+      "happy": "😊 سعيد",
+      "sad": "😔 حزين",
+      "stressed": "😫 مُجهَد",
+      "default": "🙂 طبيعي"
+    }
+  },
+
+
+  "feedCard": {
+    "youtubeTitle": "فيديوهات يوتيوب:",
+    "spotifyTitle": "قوائم سبوتيفاي:",
+
+    "spotify": {
+      "list1":"موسيقى مختارة بعناية لتناسب حالتك المزاجية وتجعلك تشعر بتحسن خلال يومك.",
+      "list2":"قائمة تشغيل مخصّصة لدعم مزاجك ومساعدتك على الوصول إلى توازن أفضل.",
+      "list3":"اكتشف موسيقى تتماشى مع طاقتك وتساعدك على إعادة التركيز أو الاسترخاء بسهولة.",
+      "list4":"مقاطع مختارة بعناية لتعزيز رفاهيتك وتهدئة مشاعرك.",
+      "list5":"موسيقى مصممة لتناسب حالتك الحالية وتشجع تدفقًا عاطفيًا أكثر صحة.",
+      "list6":"دع هذه الأصوات المختارة تقود مزاجك نحو الوضوح أو الهدوء أو التحفيز — حسب حاجتك.",
+      "list7":"مجموعة سلسة من المقاطع المصممة لدعم الاسترخاء أو التركيز أو الإيجابية."      
+    },
+
+    "youtube": {
+      "list1":"محتوى فيديو مفيد تم اختياره لرفع حالتك المزاجية ومنحك لحظة وضوح وإلهام.",
+      "list2":"لحظة موجهة لمساعدتك على الاسترخاء أو إعادة التركيز أو تحسين حالتك العاطفية.",
+      "list3":"فيديوهات ممتعة مختارة لتناسب مزاجك وتوفر لك الدافع أو الهدوء أو الدعم العاطفي.",
+      "list4":"محتوى قصير وفعّال لمساعدتك على التنفس والهدوء والشعور بالمزيد من التوازن.",
+      "list5":"مرئيات وتوجيهات هادفة لدعم صحتك النفسية وتحسين مزاجك.",
+      "list6":"فيديوهات مصممة لتناسب احتياجاتك العاطفية وتمنحك الراحة أو التحفيز أو السلام.",
+      "list7":"محتوى مختار بعناية لمساعدتك على إعادة توازن أفكارك وتحسين مزاجك."      
+    }
+  },
+
+
+  "plan": {
+    "title": "الخطة",
+    "header": "اختر الخطة التي تناسب رحلتك في العافية",
+    "description": "تقدم MindTrack AI أدوات قوية لمساعدتك على فهم مشاعرك وتتبع حالتك المزاجية وتحسين صحتك النفسية. ابدأ مجانًا، وقم بالترقية في أي وقت.",
+    "steps": {
+      "createAccount": "أنشئ حسابك المجاني",
+      "choosePlan": "اختر الخطة التي تناسب احتياجاتك",
+      "customizePreferences": "خصص تفضيلاتك",
+      "startUsing": "ابدأ باستخدام المنصة فورًا"
+    },
+    "subheader": "شفاف وبسيط وآمن",
+    "features": {
+      "encryption": "تشفير شامل لجميع اليوميات",
+      "payments": "مدفوعات آمنة عبر Stripe",
+      "cancelAnytime": "ألغِ في أي وقت — بدون التزام",
+      "privacy": "متوافق 100٪ مع الخصوصية (GDPR)"
+    },
+    "free": "مجاني",
+    "month" : "€/شهريا",
+    "proPlan": "اشترك الان",
+    "alreadyPlan": "مشترك بالفعل",
+    "feature1Free": "إدخالات يوميات نصية محدودة (3)",
+    "feature2Free": "الوصول إلى الأدوات الأساسية",
+    "feature3Free": "مساحة تخزين محدودة",
+    "feature4Free": "دعم قياسي",
+    "feature1Pro": "إدخالات يوميات غير محدودة",
+    "feature2Pro": "توقعات المزاج",
+    "feature3Pro": "مساحة تخزين غير محدودة",
+    "feature4Pro": "دعم أولوي",
+    "feature5": "تحليلات متقدمة",
+    "feature6": "ميزة الفريق",
+    "feature7": "الوصول المبكر إلى الميزات الجديدة",
+    "addJournal": "إضافة يومية",
+    "continueFree": "متابعة النسخة المجانية",
+    "getPro": "احصل على اشتراك الان"
+  },
+
+
+  "contact": {
+    "breadcrumb": "اتصل بنا",
+    "title": "اتصل بنا",
+    "header": "تواصل معنا",
+    "description": "سواء كان لديك سؤال، أو تحتاج إلى دعم، أو ترغب فقط في مشاركة رأيك — يسعدنا سماعك.",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "message": "الرسالة",
+    "namePlaceholder": "اسمك",
+    "emailPlaceholder": "بريدك الإلكتروني",
+    "messagePlaceholder": "رسالتك",
+    "submit": "إرسال الرسالة",
+    "sending": "جارٍ الإرسال...",
+    "success": "شكراً! تم إرسال رسالتك بنجاح. سنرد عليك قريباً.",
+    "error": "حدث خطأ ما.",
+    "serverError": "خطأ في الخادم. الرجاء المحاولة لاحقاً."
+  },
+  "Dashboard":"الصفحة الرئيسية",
+
+  "Admine" : {
+    "WelcAdmine": "المشرف",
+    "journals" : "لوحة المجلة",
+    "breadcrumbs": {
+    "admin": "المسؤول"
+  },
+  "head": {
+    "dashboard": "لوحة تحكم المسؤول"
+  },
+  "stats": {
+    "totalUsers": "إجمالي المستخدمين",
+    "proUsers": "المستخدمون المحترفون",
+    "freeUsers": "المستخدمون المجانيون",
+    "trials": "تجارب",
+    "monthlyRevenue": "الإيرادات الشهرية"
+  },
+  "usersTable": {
+    "title": "إدارة المستخدمين",
+    "columns": {
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "role": "الدور",
+      "plan": "الخطة",
+      "created": "تاريخ الإنشاء",
+      "actions": "الإجراءات"
+    },
+    "roles": {
+      "user": "مستخدم",
+      "admin": "مسؤول"
+    },
+    "plans": {
+      "free": "مجاني",
+      "pro": "مشترك"
+    }
+  },
+  "quotes": {
+    "title": "أحدث الاقتباسات"
+  },
+  "toast": {
+    "userRoleUpdated": "تم تحديث دور المستخدم بنجاح",
+    "userRoleFailed": "فشل تحديث دور المستخدم",
+    "userPlanUpdated": "تم تحديث خطة المستخدم بنجاح",
+    "userPlanFailed": "فشل تحديث خطة المستخدم",
+    "userDeleted": "تم حذف المستخدم بنجاح",
+    "userDeleteFailed": "فشل حذف المستخدم",
+    "deleteWarning": "هذا الإجراء لا يمكن التراجع عنه",
+    "deleteButton": "حذف"
+  }
+  },
+  "Journals":{
+    "breadcrumbs": {
+    "journals": "اليوميات"
+  },
+  "head": {
+    "journals": "لوحة اليوميات"
+  },
+  "header": {
+    "title": "🧠 لوحة التحكم في اليوميات",
+    "description": "إدارة جميع إدخالات يوميات المستخدمين في مكان واحد"
+  },
+  "emptyState": {
+    "message": "لا توجد إدخالات يوميات."
+  },
+  "journalCard": {
+    "badge": "يوميات المستخدم",
+    "journalEntry": "إدخال اليوميات",
+    "media": "عرض الوسائط"
+  },
+  "actions": {
+    "deleteButton": "حذف",
+    "deleteConfirmTitle": "هل تريد حذف هذه اليوميات؟",
+    "deleteConfirmDescription": "لا يمكن التراجع عن هذا الإجراء. سيتم حذف إدخال اليوميات نهائيًا.",
+    "cancel": "إلغاء",
+    "confirmDelete": "تأكيد الحذف",
+    "toast": {
+      "deleted": "تم حذف اليوميات بنجاح",
+      "failed": "فشل حذف اليوميات"
+    }
+  }
+  },
+
+  "admin": {
+    "users": {
+      "title": "إدارة المستخدمين",
+      "subtitle": "إدارة جميع مستخدمي المنصة",
+      "name": "الاسم",
+      "role": "الدور",
+      "plan": "الخطة",
+      "created": "تاريخ الإنشاء",
+      "actions": "الإجراءات",
+      "delete_title": "هل تريد حذف هذا المستخدم؟",
+      "delete_desc": "لا يمكن التراجع عن هذا الإجراء. سيتم حذف المستخدم نهائياً.",
+      "deleted": "تم حذف المستخدم بنجاح"
+    }
+  },
+  "common": {
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "error": "حدث خطأ"
+  }
+}

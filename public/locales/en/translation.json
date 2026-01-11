@@ -1,0 +1,359 @@
+{
+  "Welcome": "Welcome",
+  "Login": "Login",
+  "Register": "Register",
+  "Logout": "Logout",
+  "desc" : "Your emotional journey at a glance.",
+  "desc2" : "Start your day with awareness. See your current emotional balance, your latest activity, and personalized AI insights — all in one glance.",
+  "about" : "About",
+  "analytics" : "View Analytics",
+  "addJournal" : "Add Journal",
+  "TodayQuote" : "Today’s Quote",
+  "GetYourPlan" : "Get your plan",
+  "ContinueFreeTrial" : "Continue Free Trial",
+  "GenerateANewQuote" : "Generate a new Quote",
+  "Home" : "Home",
+  "MoodEvolutionOverTime" : "Mood Evolution Over Time",
+  "Author" : "Author",
+  "desc3" : "Track your emotional patterns through daily, weekly, and monthly insights.",
+  "feed_title": "What Your Mind Needs Today",
+  "feed_description": "Enjoy personalized suggestions — meditation audios, playlists, or motivational content based on your current state of mind.",
+  "feed_button": "Feed",
+  "plan_title": "Choose Your Wellness Plan",
+  "in_plan": "Already in Plan",
+  "pro_plan": "Pro Plan",
+  "feature_all": "All features",
+  "feature_mood": "Mood predictions",
+  "feature_personalized": "Personalized content",
+  "feature_priority_support": "Priority support",
+
+
+  "My Journals": "My Journals",
+  "My Journal Entries": "My Journal Entries",
+  "No journal entries yet": "No journal entries yet",
+  "Journal media": "Journal media",
+  "Your browser does not support the audio element": "Your browser does not support the audio element.",
+  "PDF Document": "PDF Document",
+  "Your browser does not support iframes.": "Your browser does not support iframes.",
+  "Analyzing...": "Analyzing...",
+  "Analyze Emotion": "Analyze Emotion",
+  "Emotion": "Emotion",
+  "Confidence": "Confidence",
+  "Delete": "Delete",
+  "Delete Confirmation": "Delete Confirmation",
+  "Are you sure you want to delete this journal entry? This action cannot be undone.": "Are you sure you want to delete this journal entry? This action cannot be undone.",
+  "Cancel": "Cancel",
+
+
+  "Create Journals" : "Create Journals",
+  "Add Entries": "Add Entries",
+  "Add New Journal Entry": "Add New Journal Entry",
+  "1. Create your journal (Text, Image, Audio)": "1. Create your journal (Text, Image, Audio)",
+  "2. Go to journals entries to analyze your emotion": "2. Go to journals entries to analyze your emotion",
+  "3. Check your analytics section to see your progresses": "3. Check your analytics section to see your progresses",
+  "Text Content": "Text Content",
+  "Media Type": "Media Type",
+  "Text": "Text",
+  "Image": "Image",
+  "Audio": "Audio",
+  "Upload Media": "Upload Media (mp3)",
+  "Choose a file" : "Choose a file",
+  "Saving...": "Saving...",
+  "Save Entry": "Save Entry",
+  "Back to Journals": "Back to Journals",
+  "Émotion détectée" : "Emotion detected",
+
+
+
+  "Analytics" : "Analytics",
+  "analytics.title": "Your Progress & Emotions",
+  "analytics.totalEntries": "Total Entries",
+  "analytics.averagePerDay": "Average per Day",
+  "analytics.maxEntries": "Max Entries in a Day",
+  "analytics.entriesOverTime": "Entries Over Time",
+  "analytics.moodTrends": "Mood & Activity Trends",
+  "analytics.normalizedNote": "All metrics are normalized to 0–100% to visualize trends together.",
+  "analytics.table.title": "Daily Emotion Analysis",
+  "analytics.table.date": "Date",
+  "analytics.table.entries": "Entries",
+  "analytics.table.emotion": "Emotion Label",
+  "analytics.table.confidence": "Confidence",
+
+
+  "Services" : "Services",
+  "home.moodDetection.title": "Mood Detection",
+  "home.moodDetection.subtitle": "AI Emotion Recognition",
+  "home.moodDetection.desc": "Understand your emotional tone from text, voice, and facial cues.",
+  "home.trendAnalytics.title": "Trend Analytics",
+  "home.trendAnalytics.subtitle": "Visualize Emotional Growth",
+  "home.trendAnalytics.desc": "Track your progress over days, weeks and months through clean analytics.",
+  "home.guidance.title": "Personalized Guidance",
+  "home.guidance.subtitle": "Tailored Recommendations",
+  "home.guidance.desc": "Receive music, meditation and self-care content matching your mood.",
+  "home.storage.title": "Secure Storage",
+  "home.storage.subtitle": "Your Data, Your Control",
+  "home.storage.desc": "All information is encrypted and stored with complete transparency.",
+  "home.plan.choose": "Choose Your Wellness Plan",
+  "home.plan.badge.active": "Already in Plan",
+  "home.plan.badge.pro": "Pro Plan",
+  "home.plan.features.all": "All features",
+  "home.plan.features.mood": "Mood predictions",
+  "home.plan.features.personalized": "Personalized content",
+  "home.plan.features.support": "Priority support",
+  "home.plan.button.addJournal": "Add Journal",
+  "home.plan.button.getPlan": "Get your plan",
+  "home.feed.title": "Your Daily Wellness Stream",
+  "home.feed.badge": "Feed",
+  "home.feed.features.quotes": "Motivational quotes",
+  "home.feed.features.meditation": "Guided meditation videos",
+  "home.feed.features.music": "Calming music",
+  "home.feed.button": "Feed",
+
+  "aboute": {
+    "AboutUs" : "About us",
+    "title": "Emotional Well-Being for Everyone",
+    "subtitle": "We combine psychology, design, and AI to help people understand themselves.",
+    "learn_more": "Learn More About Our Mission",
+    "meet_team": "Meet the Team",
+    "platform_metrics": "Platform Metrics",
+    "distribution": "Distribution",
+    "total_users": "Total Users",
+    "total_quotes": "Total Quotes",
+    "happy_users": "Happy Users",
+    "platform_capital": "Platform Capital",
+    "mission_title": "Mission:",
+    "mission_text": "We aim to provide intuitive and high-quality digital tools that are accessible to everyone — from beginners to professionals.",
+    "started_title": "How it all started",
+    "started_text": "Our journey began with a simple idea: create a modern tool that solves real-life problems without unnecessary complexity. What started as a small project quickly grew into a platform used by people worldwide. We combined design, technology, and listening to user feedback to build something meaningful — and we’re just getting started.",
+    "innovation_title": "Innovation:",
+    "innovation_desc": "We constantly explore new ideas to enhance our solutions.",
+    "quality_title": "Quality:",
+    "quality_desc": "We focus on stability, performance, and excellence.",
+    "transparency_title": "Transparency:",
+    "transparency_desc": "Honest pricing, clear communication, and user-first decisions.",
+    "community_title": "Community:",
+    "community_desc": "We grow by listening to our users.",
+    "team_title": "Meet the Team",
+    "team1_title": "Marwane — Founder & Developer",
+    "team1_desc": "Passionate about building reliable digital experiences. Leads development, architecture, and product direction.",
+    "team2_title": "Marwane — UI/UX Designer",
+    "team2_desc": "Creates modern, human-centered interfaces with accessible and scalable design systems.",
+    "Users" : "Users",
+    "Quotes" : "Quotes",
+    "HappyUsers" : "Happy Users",
+    "Capital" : "Capital ($)"
+  },
+
+  "Menu" : {
+    "nav": {
+      "home": "Home",
+      "journals": "Journal Entries",
+      "upload": "Upload Document",
+      "analytics": "Your Analytics",
+      "services": "Services",
+      "about": "About Us"
+    },
+    "footer": {
+      "resources": "RESOURCES",
+      "feed": "Feed",
+      "pricing": "Pricing",
+      "connect": "CONNECT",
+      "contact": "Contact",
+      "Search" : "Search..."
+    }
+  },
+  "feed": {
+    "FeedSuggestions" : "Feed Suggestions",
+    "title": "🎧 Suggestions for your mood",
+    "yourMood": "Your current mood:",
+    "mood": {
+      "happy": "😊 Happy",
+      "sad": "😔 Sad",
+      "stressed": "😫 Stressed",
+      "default": "🙂 Neutral"
+    }
+  },
+
+  "feedCard": {
+    "youtubeTitle": "YouTube Videos:",
+    "spotifyTitle": "Spotify Playlists:",
+
+    "spotify": {
+      "list1" : "Curated music selected to match your emotional state and help you feel better throughout the day.",
+      "list2" :"A personalized playlist designed to support your mood and guide you into a more balanced mindset.",
+      "list3" :"Discover music that aligns with your energy and helps you reset, focus, or unwind with ease.",
+      "list4" :"Thoughtfully chosen tracks meant to enhance your well-being and gently shift your emotions.",
+      "list5" :"Music crafted to complement your current mood and encourage a healthier emotional flow.",
+      "list6" :"Let these curated sounds guide your mood toward clarity, calmness, or motivation — whatever you need right now.",
+      "list7" :"A smooth selection of tracks tailored to support relaxation, focus, or positivity."
+    },
+
+    "youtube": {
+      "list1" : "Helpful video content selected to uplift your mood and give you a moment of clarity or inspiration.",
+      "list2" :"A guided moment designed to help you relax, refocus, or shift your emotional state in a healthier direction.",
+      "list3" :"Engaging videos chosen to match your mood and provide motivation, calmness, or emotional support.",
+      "list4" :"Short, impactful content curated to help you breathe, reset, and feel more grounded.",
+      "list5" :"Meaningful visuals and guidance designed to support your mental well-being and brighten your mindset.",
+      "list6" :"Videos crafted to match your emotional needs, offering comfort, motivation, or peacefulness.",
+      "list7" :"Selected content meant to help you recenter your thoughts and move toward a healthier mood."
+    }
+  },
+
+
+  "plan": {
+    "title": "Plan",
+    "header": "Choose the Plan That Fits Your Wellness Journey",
+    "description": "MindTrack AI offers powerful tools to help you understand your emotions, track your mood, and improve your mental well-being. Start free, upgrade anytime.",
+    "steps": {
+      "createAccount": "Create your free account",
+      "choosePlan": "Choose the plan that fits your needs",
+      "customizePreferences": "Customize your preferences",
+      "startUsing": "Start using the platform instantly"
+    },
+    "subheader": "Transparent, Simple, and Secure",
+    "features": {
+      "encryption": "End-to-end encryption for all journals",
+      "payments": "Secure Stripe payments",
+      "cancelAnytime": "Cancel anytime — no lock-in",
+      "privacy": "100% privacy compliant (GDPR)"
+    },
+    "free": "Free",
+    "month" : "€/month",
+    "proPlan": "Pro Plan",
+    "alreadyPlan": "Already in Plan",
+    "feature1Free": "Limited text journal entries (3)",
+    "feature2Free": "Access to essential tools",
+    "feature3Free": "Limited storage",
+    "feature4Free": "Standard support",
+    "feature1Pro": "Unlimited Journal Entries",
+    "feature2Pro": "Mood predictions",
+    "feature3Pro": "Unlimited storage",
+    "feature4Pro": "Priority support",
+    "feature5": "Advanced analytics",
+    "feature6": "Team feature",
+    "feature7": "Early access to new features",
+    "addJournal": "Add Journal",
+    "continueFree": "Continue Free Trial",
+    "getPro": "Get Pro Plan"
+  },
+
+
+  "contact": {
+    "breadcrumb": "Contact",
+    "title": "Contact",
+    "header": "Contact Us",
+    "description": "Whether you have a question, need support, or just want to share feedback — we’d love to hear from you.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message",
+    "submit": "Submit Message",
+    "sending": "Sending...",
+    "success": "Thank you! Your message has been sent successfully. We’ll get back to you soon.",
+    "error": "An error occurred.",
+    "serverError": "Server error. Please try again later."
+  },
+  "Dashboard":"Dashboard",
+  "Admine" : {
+    "WelcAdmine": "Admine",
+    "journals" : "Journal Panel",
+    "breadcrumbs": {
+      "admin": "Admin"
+    },
+    "head": {
+      "dashboard": "Admin Dashboard"
+    },
+    "stats": {
+      "totalUsers": "Total Users",
+      "proUsers": "Pro Users",
+      "freeUsers": "Free Users",
+      "trials": "Trials",
+      "monthlyRevenue": "Monthly Revenue"
+    },
+    "usersTable": {
+      "title": "Users Management",
+      "columns": {
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "plan": "Plan",
+        "created": "Created",
+        "actions": "Actions"
+      },
+      "roles": {
+        "user": "User",
+        "admin": "Admin"
+      },
+      "plans": {
+        "free": "Free",
+        "pro": "Pro"
+      }
+    },
+    "quotes": {
+      "title": "Latest Quotes"
+    },
+    "toast": {
+      "userRoleUpdated": "User role updated successfully",
+      "userRoleFailed": "Failed to update user role",
+      "userPlanUpdated": "User plan updated successfully",
+      "userPlanFailed": "Failed to update user plan",
+      "userDeleted": "User deleted successfully",
+      "userDeleteFailed": "Failed to delete user",
+      "deleteWarning": "This action is irreversible",
+      "deleteButton": "Delete"
+    }
+  },
+  "Journals":{
+    "breadcrumbs": {
+    "journals": "Journals"
+  },
+  "head": {
+    "journals": "Journals Panel"
+  },
+  "header": {
+    "title": "🧠 Journals Control Panel",
+    "description": "Manage all user journal entries in one place"
+  },
+  "emptyState": {
+    "message": "No journal entries found."
+  },
+  "journalCard": {
+    "badge": "User Journal",
+    "journalEntry": "Journal Entry",
+    "media": "View Media"
+  },
+  "actions": {
+    "deleteButton": "Delete",
+    "deleteConfirmTitle": "Delete this journal?",
+    "deleteConfirmDescription": "This action cannot be undone. The journal entry will be permanently removed.",
+    "cancel": "Cancel",
+    "confirmDelete": "Confirm Delete",
+    "toast": {
+      "deleted": "Journal deleted successfully",
+      "failed": "Failed to delete journal"
+    }
+  }
+  },
+  "admin": {
+    "users": {
+      "title": "Users Management",
+      "subtitle": "Manage all users of the platform",
+      "name": "Name",
+      "role": "Role",
+      "plan": "Plan",
+      "created": "Created At",
+      "actions": "Actions",
+      "delete_title": "Delete this user?",
+      "delete_desc": "This action cannot be undone. The user will be permanently removed.",
+      "deleted": "User deleted successfully"
+    }
+  },
+  "common": {
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "error": "An error occurred"
+  }
+
+}

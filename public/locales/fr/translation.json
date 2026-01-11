@@ -1,0 +1,361 @@
+{
+  "Welcome": "Bienvenue",
+  "Login": "Connexion",
+  "Register": "S'inscrire",
+  "Logout": "Déconnexion",
+  "desc" : "Votre parcours émotionnel en un coup d'œil.",
+  "desc2" : "Commencez votre journée en pleine conscience. Consultez en un coup d'œil votre équilibre émotionnel actuel, votre activité récente et des analyses personnalisées grâce à l'IA.",
+  "about" : "À propos",
+  "analytics" : "voir les analytics",
+  "addJournal" : "Ajouter un journal",
+  "TodayQuote" : "Citation du jour",
+  "GetYourPlan" : "Obtenir votre plan",
+  "ContinueFreeTrial" : "L'essai gratuit",
+  "GenerateANewQuote" : "Générer une nouveau citation",
+  "Home" : "Accueil",
+  "MoodEvolutionOverTime" : "Évolution de l'humeur au fil du temps",
+  "Author" : "Auteur",
+  "desc3" : "Analysez vos schémas émotionnels grâce à des données quotidiennes, hebdomadaires et mensuelles.",
+  "feed_title": "Ce dont votre esprit a besoin aujourd’hui",
+  "feed_description": "Profitez de suggestions personnalisées — audios de méditation, playlists ou contenus motivationnels adaptés à votre état d’esprit actuel.",
+  "feed_button": "Fil",
+  "plan_title": "Choisissez votre plan bien-être",
+  "in_plan": "Déjà abonné",
+  "pro_plan": "Plan Pro",
+  "feature_all": "Toutes les fonctionnalités",
+  "feature_mood": "Prédictions d'humeur",
+  "feature_personalized": "Contenu personnalisé",
+  "feature_priority_support": "Support prioritaire",
+
+
+  "My Journals": "Mes journaux",
+  "My Journal Entries": "Mes entrées de journal",
+  "No journal entries yet": "Aucune entrée de journal pour le moment",
+  "Journal media": "Média du journal",
+  "Your browser does not support the audio element": "Votre navigateur ne supporte pas l’élément audio.",
+  "PDF Document": "Document PDF",
+  "Your browser does not support iframes.": "Votre navigateur ne supporte pas les iframes.",
+  "Analyzing...": "Analyse en cours...",
+  "Analyze Emotion": "Analyser l’émotion",
+  "Emotion": "Émotion",
+  "Confidence": "Confiance",
+  "Delete": "Supprimer",
+  "Delete Confirmation": "Confirmation de suppression",
+  "Are you sure you want to delete this journal entry? This action cannot be undone.": "Êtes-vous sûr de vouloir supprimer cette entrée du journal ? Cette action est irréversible.",
+  "Cancel": "Annuler",
+
+
+  "Create Journals" : "Créer des journaux",
+  "Add Entries": "Ajouter des entrées",
+  "Add New Journal Entry": "Ajouter une nouvelle entrée de journal",
+  "1. Create your journal (Text, Image, Audio)": "1. Créez votre journal (Texte, Image, Audio)",
+  "2. Go to journals entries to analyze your emotion": "2. Accédez aux entrées du journal pour analyser vos émotions",
+  "3. Check your analytics section to see your progresses": "3. Consultez la section analytique pour voir vos progrès",
+  "Text Content": "Contenu texte",
+  "Media Type": "Type de média",
+  "Text": "Texte",
+  "Image": "Image",
+  "Audio": "Audio",
+  "Upload Media": "Télécharger un fichier (mp3)",
+  "Choose a file" : "Choisir un fichier",
+  "Saving...": "Enregistrement...",
+  "Save Entry": "Enregistrer l’entrée",
+  "Back to Journals": "Retour aux journaux",
+  "Émotion détectée" : "Émotion détectée",
+
+
+  "Analytics" : "Analytique",
+  "analytics.title": "Votre progression & émotions",
+  "analytics.totalEntries": "Nombre total d’entrées",
+  "analytics.averagePerDay": "Moyenne par jour",
+  "analytics.maxEntries": "Entrées maximales dans une journée",
+  "analytics.entriesOverTime": "Évolution des entrées",
+  "analytics.moodTrends": "Tendances de l’humeur & activité",
+  "analytics.normalizedNote": "Toutes les données sont normalisées sur 0–100% pour visualiser les tendances ensemble.",
+  "analytics.table.title": "Analyse émotionnelle quotidienne",
+  "analytics.table.date": "Date",
+  "analytics.table.entries": "Entrées",
+  "analytics.table.emotion": "Émotion",
+  "analytics.table.confidence": "Confiance",
+
+
+  "Services" : "Services",
+  "home.moodDetection.title": "Détection d’humeur",
+  "home.moodDetection.subtitle": "Reconnaissance des émotions par IA",
+  "home.moodDetection.desc": "Comprenez votre ton émotionnel à partir du texte, de la voix et des expressions faciales.",
+  "home.trendAnalytics.title": "Analyse des tendances",
+  "home.trendAnalytics.subtitle": "Visualisez votre évolution émotionnelle",
+  "home.trendAnalytics.desc": "Suivez vos progrès sur plusieurs jours, semaines et mois grâce à des analyses claires.",
+  "home.guidance.title": "Guidance personnalisée",
+  "home.guidance.subtitle": "Recommandations adaptées",
+  "home.guidance.desc": "Recevez musique, méditation et contenus bien-être adaptés à votre humeur.",
+  "home.storage.title": "Stockage sécurisé",
+  "home.storage.subtitle": "Vos données, votre contrôle",
+  "home.storage.desc": "Toutes les informations sont chiffrées et stockées en toute transparence.",
+  "home.plan.choose": "Choisissez votre plan bien-être",
+  "home.plan.badge.active": "Déjà abonné",
+  "home.plan.badge.pro": "Plan Pro",
+  "home.plan.features.all": "Toutes les fonctionnalités",
+  "home.plan.features.mood": "Prédiction d’humeur",
+  "home.plan.features.personalized": "Contenu personnalisé",
+  "home.plan.features.support": "Support prioritaire",
+  "home.plan.button.addJournal": "Ajouter un journal",
+  "home.plan.button.getPlan": "Obtenir le plan",
+  "home.feed.title": "Votre flux bien-être quotidien",
+  "home.feed.badge": "Flux",
+  "home.feed.features.quotes": "Citations motivantes",
+  "home.feed.features.meditation": "Vidéos de méditation guidée",
+  "home.feed.features.music": "Musique relaxante",
+  "home.feed.button": "Aller au flux",
+
+
+  "aboute": {
+    "AboutUs" : "À propos",
+    "title": "Bien-être émotionnel pour tous",
+    "subtitle": "Nous combinons la psychologie, le design et l’IA pour aider chacun à mieux se comprendre.",
+    "learn_more": "En savoir plus sur notre mission",
+    "meet_team": "Rencontrer l’équipe",
+    "platform_metrics": "Statistiques de la plateforme",
+    "distribution": "Répartition",
+    "total_users": "Utilisateurs totaux",
+    "total_quotes": "Citations totales",
+    "happy_users": "Utilisateurs satisfaits",
+    "platform_capital": "Capital de la plateforme",
+    "mission_title": "Mission :",
+    "mission_text": "Nous visons à fournir des outils numériques intuitifs et de haute qualité, accessibles à tous — des débutants aux professionnels.",
+    "started_title": "Comment tout a commencé",
+    "started_text": "Notre aventure a commencé avec une idée simple : créer un outil moderne qui résout des problèmes réels sans complexité inutile. Ce qui n’était qu’un petit projet est rapidement devenu une plateforme utilisée dans le monde entier. Nous avons combiné design, technologie et retours utilisateurs pour construire quelque chose de significatif — et nous ne faisons que commencer.",
+    "innovation_title": "Innovation :",
+    "innovation_desc": "Nous explorons constamment de nouvelles idées pour améliorer nos solutions.",
+    "quality_title": "Qualité :",
+    "quality_desc": "Nous nous concentrons sur la stabilité, la performance et l’excellence.",
+    "transparency_title": "Transparence :",
+    "transparency_desc": "Tarification honnête, communication claire et décisions centrées sur l'utilisateur.",
+    "community_title": "Communauté :",
+    "community_desc": "Nous grandissons en écoutant nos utilisateurs.",
+    "team_title": "Rencontrer l’équipe",
+    "team1_title": "Marwane — Fondateur & Développeur",
+    "team1_desc": "Passionné par la création d'expériences numériques fiables. Dirige le développement, l’architecture et la vision produit.",
+    "team2_title": "Marwane — Designer UI/UX",
+    "team2_desc": "Crée des interfaces modernes et centrées sur l’humain avec des systèmes de design accessibles et évolutifs.",
+    "Users" : "Utilisateurs",
+    "Quotes" : "Citations",
+    "HappyUsers" : "Utilisateurs ☺︎",
+    "Capital" : "Capital ($)"
+  },
+
+  "Menu" : {
+    "nav": {
+      "home": "Accueil",
+      "journals": "Entrées du Journal",
+      "upload": "Télécharger un Document",
+      "analytics": "Vos Analyses",
+      "services": "Services",
+      "about": "À Propos"
+    },
+    "footer": {
+      "resources": "RESSOURCES",
+      "feed": "Flux",
+      "pricing": "Tarification",
+      "connect": "CONTACT",
+      "contact": "Contact",
+      "Search" : "Rechercher..."
+    }
+  },
+  "feed": {
+    "FeedSuggestions" : "Suggestions",
+    "title": "🎧 Suggestions selon votre humeur",
+    "yourMood": "Votre humeur actuelle :",
+    "mood": {
+      "happy": "😊 Heureux",
+      "sad": "😔 Triste",
+      "stressed": "😫 Stressé",
+      "default": "🙂 Neutre"
+    }
+  },
+
+
+  "feedCard": {
+    "youtubeTitle": "Vidéos YouTube :",
+    "spotifyTitle": "Playlists Spotify :", 
+
+    "spotify": {
+      "list1":"De la musique soigneusement sélectionnée pour correspondre à votre état émotionnel et améliorer votre journée.",
+      "list2":"Une playlist personnalisée conçue pour soutenir votre humeur et vous guider vers un meilleur équilibre.",
+      "list3":"Découvrez des musiques adaptées à votre énergie pour vous aider à vous recentrer, vous concentrer ou vous détendre.",
+      "list4":"Des titres choisis avec attention pour améliorer votre bien-être et apaiser vos émotions.",
+      "list5":"De la musique pensée pour accompagner votre humeur et encourager un meilleur flux émotionnel.",
+      "list6":"Laissez ces sons sélectionnés guider votre humeur vers la clarté, le calme ou la motivation.",
+      "list7":"Un choix fluide de morceaux pour favoriser la relaxation, la concentration ou la positivité."  
+    },
+
+    "youtube": {
+      "list1":"Des vidéos utiles sélectionnées pour éclairer votre humeur et vous offrir un moment d’inspiration.",
+      "list2":"Un moment guidé pour vous aider à vous détendre, vous recentrer ou améliorer votre état émotionnel.",
+      "list3":"Des vidéos engageantes choisies pour apporter motivation, calme ou soutien émotionnel.",
+      "list4":"Du contenu court et impactant pour vous aider à respirer, vous apaiser et vous recentrer.",
+      "list5":"Des visuels significatifs conçus pour soutenir votre bien-être mental et illuminer votre humeur.",
+      "list6":"Des vidéos adaptées à vos besoins émotionnels, offrant réconfort, motivation ou sérénité.",
+      "list7":"Du contenu sélectionné pour vous aider à retrouver votre équilibre et améliorer votre état d’esprit."
+    }
+  },
+
+
+  "plan": {
+    "title": "Plan",
+    "header": "Choisissez le plan qui correspond à votre parcours de bien-être",
+    "description": "MindTrack AI propose des outils puissants pour vous aider à comprendre vos émotions, suivre votre humeur et améliorer votre bien-être mental. Commencez gratuitement, évoluez quand vous le souhaitez.",
+    "steps": {
+      "createAccount": "Créez votre compte gratuit",
+      "choosePlan": "Choisissez le plan qui correspond à vos besoins",
+      "customizePreferences": "Personnalisez vos préférences",
+      "startUsing": "Commencez à utiliser la plateforme immédiatement"
+    },
+    "subheader": "Transparent, simple et sécurisé",
+    "features": {
+      "encryption": "Chiffrement de bout en bout pour tous les journaux",
+      "payments": "Paiements sécurisés via Stripe",
+      "cancelAnytime": "Annulez à tout moment — sans engagement",
+      "privacy": "100 % conforme à la vie privée (RGPD)"
+    },
+    "free": "Gratuit",
+    "month" : "€/moi",
+    "proPlan": "Plan Pro",
+    "alreadyPlan": "Déjà dans le plan",
+    "feature1Free": "Entrées de journaux textuels limitées (3)",
+    "feature2Free": "Accès aux outils essentiels",
+    "feature3Free": "Stockage limité",
+    "feature4Free": "Support standard",
+    "feature1Pro": "Entrées de journaux illimitées",
+    "feature2Pro": "Prédictions d'humeur",
+    "feature3Pro": "Stockage illimité",
+    "feature4Pro": "Support prioritaire",
+    "feature5": "Analyses avancées",
+    "feature6": "Fonctionnalité d'équipe",
+    "feature7": "EAccès anticipé aux nouvelles fonctionnalités",
+    "addJournal": "Ajouter un journal",
+    "continueFree": "Continuer l'essai gratuit",
+    "getPro": "Obtenir le plan Pro"
+  },
+
+
+  "contact": {
+    "breadcrumb": "Contact",
+    "title": "Contact",
+    "header": "Contactez-nous",
+    "description": "Que vous ayez une question, besoin d'aide ou que vous souhaitiez simplement partager un retour — nous serions ravis de vous lire.",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Votre email",
+    "messagePlaceholder": "Votre message",
+    "submit": "Envoyer le message",
+    "sending": "Envoi...",
+    "success": "Merci ! Votre message a été envoyé avec succès. Nous vous répondrons bientôt.",
+    "error": "Une erreur est survenue.",
+    "serverError": "Erreur du serveur. Veuillez réessayer plus tard."
+  },
+  "Dashboard":"Tableau de bord",
+
+  "Admine" : {
+    "WelcAdmine": "Admine",
+    "journals" : "Panneau de journals",
+    "breadcrumbs": {
+    "admin": "Admin"
+  },
+  "head": {
+    "dashboard": "Tableau de bord Admin"
+  },
+  "stats": {
+    "totalUsers": "Total des utilisateurs",
+    "proUsers": "Utilisateurs Pro",
+    "freeUsers": "Utilisateurs gratuits",
+    "trials": "Essais",
+    "monthlyRevenue": "Revenu mensuel"
+  },
+  "usersTable": {
+    "title": "Gestion des utilisateurs",
+    "columns": {
+      "name": "Nom",
+      "email": "Email",
+      "role": "Rôle",
+      "plan": "Plan",
+      "created": "Créé le",
+      "actions": "Actions"
+    },
+    "roles": {
+      "user": "Utilisateur",
+      "admin": "Admin"
+    },
+    "plans": {
+      "free": "Gratuit",
+      "pro": "Pro"
+    }
+  },
+  "quotes": {
+    "title": "Dernières citations"
+  },
+  "toast": {
+    "userRoleUpdated": "Rôle utilisateur mis à jour avec succès",
+    "userRoleFailed": "Échec de la mise à jour du rôle utilisateur",
+    "userPlanUpdated": "Plan utilisateur mis à jour avec succès",
+    "userPlanFailed": "Échec de la mise à jour du plan utilisateur",
+    "userDeleted": "Utilisateur supprimé avec succès",
+    "userDeleteFailed": "Échec de la suppression de l'utilisateur",
+    "deleteWarning": "Cette action est irréversible",
+    "deleteButton": "Supprimer"
+  }
+  },
+  "Journals":{
+    "breadcrumbs": {
+    "journals": "Journaux"
+  },
+  "head": {
+    "journals": "Panneau des journaux"
+  },
+  "header": {
+    "title": "🧠 Panneau de contrôle des journaux",
+    "description": "Gérez toutes les entrées de journaux des utilisateurs en un seul endroit"
+  },
+  "emptyState": {
+    "message": "Aucune entrée de journal trouvée."
+  },
+  "journalCard": {
+    "badge": "Journal utilisateur",
+    "journalEntry": "Entrée de journal",
+    "media": "Voir le média"
+  },
+  "actions": {
+    "deleteButton": "Supprimer",
+    "deleteConfirmTitle": "Supprimer ce journal ?",
+    "deleteConfirmDescription": "Cette action est irréversible. L'entrée de journal sera définitivement supprimée.",
+    "cancel": "Annuler",
+    "confirmDelete": "Confirmer la suppression",
+    "toast": {
+      "deleted": "Journal supprimé avec succès",
+      "failed": "Échec de la suppression du journal"
+    }
+  }
+  },
+
+  "admin": {
+    "users": {
+      "title": "Gestion des utilisateurs",
+      "subtitle": "Gérez tous les utilisateurs de la plateforme",
+      "name": "Nom",
+      "role": "Rôle",
+      "plan": "Plan",
+      "created": "Créé le",
+      "actions": "Actions",
+      "delete_title": "Supprimer cet utilisateur ?",
+      "delete_desc": "Cette action est irréversible. L'utilisateur sera supprimé définitivement.",
+      "deleted": "Utilisateur supprimé avec succès"
+    }
+  },
+  "common": {
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "error": "Une erreur est survenue"
+  }
+}
